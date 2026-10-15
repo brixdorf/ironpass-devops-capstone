@@ -16,3 +16,7 @@ node_max_size      = 3
 # repository that is allowed to deploy through GitHub OIDC
 github_repository = "brixdorf/ironpass-devops-capstone"
 github_branch     = "main"
+
+# Subject prefix that GitHub puts in its tokens. Find it with
+#   gh api repos/OWNER/NAME/actions/oidc/customization/sub
+github_oidc_subject_prefix = "repo:brixdorf@180433577/ironpass-devops-capstone@1421043713"

@@ -88,6 +88,12 @@ variable "github_repository" {
   default     = "brixdorf/ironpass-devops-capstone"
 }
 
+variable "github_oidc_subject_prefix" {
+  description = "Start of the OIDC subject that GitHub puts in its tokens. New repositories use ids, for example repo:owner@123/name@456. Find it with: gh api repos/OWNER/NAME/actions/oidc/customization/sub"
+  type        = string
+  default     = "repo:brixdorf@180433577/ironpass-devops-capstone@1421043713"
+}
+
 variable "github_branch" {
   description = "Only this branch of the repository can assume the deploy role"
   type        = string
