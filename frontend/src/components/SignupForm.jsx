@@ -37,7 +37,7 @@ export default function SignupForm({ plans, onCreate }) {
         <select value={planId || plans[0]?.id || ""} onChange={(e) => setPlanId(e.target.value)}>
           {plans.map((p) => (
             <option key={p.id} value={p.id}>
-              {p.name} ({p.duration_days} days)
+              {p.name} ({p.duration_days} {p.duration_days === 1 ? "day" : "days"})
             </option>
           ))}
         </select>

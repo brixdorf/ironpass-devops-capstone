@@ -42,7 +42,9 @@ export default function MembersTable({ members, loading, onRenew, onFreeze, onDe
                   {STATUS_LABEL[m.effective_status]}
                 </span>
               </td>
-              <td data-label="Expires">{formatDate(m.expires_on)}</td>
+              <td data-label="Expires" className="expires">
+                {formatDate(m.expires_on)}
+              </td>
               <td className="row-actions">
                 <button className="link" onClick={() => onRenew(m)}>
                   Renew

@@ -277,6 +277,10 @@ td {
   vertical-align: middle;
 }
 
+.expires {
+  white-space: nowrap;
+}
+
 .member-name {
   display: block;
   font-weight: 600;
