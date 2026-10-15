@@ -53,9 +53,9 @@ variable "private_subnet_cidrs" {
 }
 
 variable "node_instance_type" {
-  description = "EC2 instance type of the worker nodes"
+  description = "EC2 instance type of the worker nodes. This AWS account is on the free plan, which refuses t3.medium, so the default is c7i-flex.large (same 2 vCPU and 4 GiB)."
   type        = string
-  default     = "t3.medium"
+  default     = "c7i-flex.large"
 }
 
 variable "node_desired_size" {
