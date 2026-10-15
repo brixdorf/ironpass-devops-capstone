@@ -8,8 +8,10 @@ WORKDIR /app
 
 # install dependencies first so this layer is cached between code changes
 COPY requirements.txt .
-RUN pip install --upgrade pip \
-    && pip install -r requirements.txt \
+RUN pip install -r requirements.txt \
+    # pip and setuptools are not needed at runtime, removing them also
+    # removes the libraries they bundle from the image scan
+    && pip uninstall -y pip setuptools wheel \
     && useradd --create-home --uid 10001 --shell /usr/sbin/nologin ironpass
 
 COPY alembic.ini ./
