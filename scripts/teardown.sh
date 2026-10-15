@@ -112,8 +112,18 @@ check() {
   fi
 }
 
-check "classic load balancers" "$(aws elb describe-load-balancers --region "$REGION" \
-  --query "LoadBalancerDescriptions[?contains(VPCId, 'vpc')].LoadBalancerName" --output text | grep -i ironpass || true)"
+# classic load balancers carry the tag we set in k8s/ingress-nginx-values.yaml
+elb_names=$(aws elb describe-load-balancers --region "$REGION" \
+  --query 'LoadBalancerDescriptions[].LoadBalancerName' --output text | tr '\t' ' ')
+elb_left=""
+for name in $elb_names; do
+  hit=$(aws elb describe-tags --region "$REGION" --load-balancer-names "$name" \
+    --query "TagDescriptions[].Tags[?Key=='Project' && Value=='ironpass'] | [0][0].Value" --output text)
+  [ "$hit" = "ironpass" ] && elb_left="$elb_left $name"
+done
+check "classic load balancers" "$elb_left"
+check "network load balancers" "$(aws elbv2 describe-load-balancers --region "$REGION" \
+  --query "LoadBalancers[?contains(LoadBalancerName, 'ironpass')].LoadBalancerArn" --output text)"
 check "ebs volumes" "$(aws ec2 describe-volumes --region "$REGION" \
   --filters Name=tag:Project,Values=ironpass --query 'Volumes[].VolumeId' --output text)"
 check "ebs volumes from the csi driver" "$(aws ec2 describe-volumes --region "$REGION" \
