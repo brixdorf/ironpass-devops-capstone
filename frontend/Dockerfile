@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # stage 2: serve them with an unprivileged nginx (runs as user 101, port 8080)
-FROM nginxinc/nginx-unprivileged:1.27-alpine
+FROM nginxinc/nginx-unprivileged:1.30-alpine3.24
 COPY --from=build /app/dist /usr/share/nginx/html
 # envsubst fills in BACKEND_URL when the container starts
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
