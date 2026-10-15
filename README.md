@@ -70,11 +70,11 @@ Every push to `main` runs `.github/workflows/ci-cd.yml`.
 | M2 | Tests | `backend/tests/`, `docs/screenshots/02-pytest-passing.png` |
 | M3 | Git and GitHub | commit history, `docs/screenshots/03-git-history.png` |
 | M4 | Docker | `backend/Dockerfile`, `frontend/Dockerfile`, `docker-compose.yml`, `docs/screenshots/04-docker-compose-up.png` |
-| M5 | CI/CD | `.github/workflows/`, `docs/screenshots/06-github-actions-green.png`, `docs/screenshots/07-ghcr-packages.png` |
+| M5 | CI/CD | `.github/workflows/`, `docs/screenshots/06-github-actions-green.png`, `docs/screenshots/07-ghcr-backend.png`, `docs/screenshots/07-ghcr-frontend.png` |
 | M6 | Trivy | `docs/SECURITY.md`, `docs/screenshots/08-trivy-scan.png` |
-| M7 | Terraform | `terraform/`, `docs/screenshots/09-terraform-plan.png`, `docs/screenshots/10-aws-vpc.png`, `docs/screenshots/11-aws-eks.png` |
-| M8 | Kubernetes and Helm | `helm/ironpass/`, `k8s/`, `docs/screenshots/14-kubectl-pods.png`, `docs/screenshots/17-ingress-app.png` |
-| M9 | Monitoring | `monitoring/`, `docs/screenshots/20-prometheus-targets.png`, `docs/screenshots/21-grafana-dashboard.png` |
+| M7 | Terraform | `terraform/`, `docs/screenshots/09-terraform-plan.png`, `docs/screenshots/10-aws-vpc-subnets.png`, `docs/screenshots/11-aws-eks-cluster.png`, `docs/screenshots/12-terraform-apply-outputs.png` |
+| M8 | Kubernetes and Helm | `helm/ironpass/`, `k8s/`, `docs/screenshots/14-kubectl-pods.png`, `docs/screenshots/16-helm-list.png`, `docs/screenshots/17-ingress-app.png`, `docs/screenshots/19-hpa-scaling.png` |
+| M9 | Monitoring | `monitoring/`, `docs/screenshots/18-metrics-endpoint.png`, `docs/screenshots/20-prometheus-targets.png`, `docs/screenshots/21-grafana-dashboard.png` |
 | M10 | Docs and demo | this README, `docs/DEMO.md`, `docs/IronPass-Presentation.pptx`, `docs/VIDEO_SCRIPT.md` |
 
 The broken manifests for the troubleshooting lab are in `troubleshooting/`.

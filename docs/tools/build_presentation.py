@@ -188,16 +188,16 @@ arrow(s, 8.9, 1.72)
 rect(s, 9.5, 1.5, 2.6, 0.9, PAPER, text="GHCR images", bold=True)
 rect(s, 0.6, 2.9, 12.1, 3.7, WHITE, LINE)
 text_box(s, 0.8, 2.95, 8, 0.4, "AWS ap-south-1  |  VPC  |  EKS (built by Terraform)", size=14, color=SOFT, bold=True)
-rect(s, 0.9, 3.5, 2.4, 1.0, PAPER, text="Ingress NGINX", bold=True)
-arrow(s, 3.4, 3.8)
-rect(s, 4.0, 3.2, 2.6, 0.8, ACCENT, None, text="Frontend x2", bold=True, color=WHITE)
-rect(s, 4.0, 4.2, 2.6, 0.8, ACCENT, None, text="Backend x2 (HPA)", bold=True, color=WHITE)
-arrow(s, 6.7, 4.4)
-rect(s, 7.3, 4.2, 2.2, 0.8, PAPER, text="PostgreSQL + PVC", bold=True)
-rect(s, 7.3, 5.4, 2.2, 0.8, PAPER, text="Prometheus", bold=True)
-arrow(s, 9.6, 5.6)
-rect(s, 10.2, 5.4, 2.2, 0.8, PAPER, text="Grafana", bold=True)
-text_box(s, 0.9, 5.3, 6.2, 1.0, ["/  goes to the frontend", "/api goes to the backend"], size=16, color=SOFT)
+rect(s, 0.9, 4.0, 2.4, 1.0, PAPER, text="Ingress NGINX", bold=True)
+arrow(s, 3.4, 4.3)
+rect(s, 4.0, 3.5, 2.6, 0.8, ACCENT, None, text="Frontend x2", bold=True, color=WHITE)
+rect(s, 4.0, 4.7, 2.6, 0.8, ACCENT, None, text="Backend x2 (HPA)", bold=True, color=WHITE)
+arrow(s, 6.7, 4.9)
+rect(s, 7.3, 4.7, 2.2, 0.8, PAPER, text="PostgreSQL + PVC", bold=True)
+rect(s, 7.3, 5.7, 2.2, 0.7, PAPER, text="Prometheus", bold=True)
+arrow(s, 9.6, 5.8)
+rect(s, 10.2, 5.7, 2.2, 0.7, PAPER, text="Grafana", bold=True)
+text_box(s, 0.9, 5.4, 3.0, 1.0, ["/  goes to the frontend", "/api goes to the backend"], size=14, color=SOFT)
 
 # 4. docker --------------------------------------------------------------
 s = new_slide("Run it locally with Docker", (
@@ -211,7 +211,7 @@ bullets(s, 0.6, 1.4, 4.4, 5, [
     "Frontend: multi-stage, unprivileged nginx",
     "Both images run as non-root",
 ], size=22)
-picture(s, "04-docker-compose-up.png", 5.2, 1.4, 7.7, 5.2)
+picture(s, "slides/compose.png", 5.2, 1.4, 7.7, 5.2)
 
 # 5. tests ---------------------------------------------------------------
 s = new_slide("Tests", (
@@ -225,7 +225,7 @@ bullets(s, 0.6, 1.4, 4.4, 5, [
     "Rule tested: expired plan is rejected",
     "Runs first in the pipeline",
 ], size=22)
-picture(s, "02-pytest-passing.png", 5.2, 1.4, 7.7, 5.2)
+picture(s, "slides/pytest.png", 5.2, 1.4, 7.7, 5.2)
 
 # 6. git -----------------------------------------------------------------
 s = new_slide("Git and GitHub", (
@@ -238,7 +238,7 @@ bullets(s, 0.6, 1.4, 4.4, 5, [
     ".gitignore: .env, state, node_modules",
     "No secrets in history",
 ], size=22)
-picture(s, "03-git-history.png", 5.2, 1.4, 7.7, 5.2)
+picture(s, "slides/git.png", 5.2, 1.4, 7.7, 5.2)
 
 # 7. pipeline ------------------------------------------------------------
 s = new_slide("CI/CD pipeline", (
@@ -282,7 +282,7 @@ bullets(s, 0.6, 1.4, 4.6, 5, [
     "EKS with managed nodes, ap-south-1",
     "GitHub OIDC role, no AWS keys",
 ], size=22)
-picture(s, "11-aws-eks-cluster.png", 5.4, 1.4, 7.5, 5.2)
+picture(s, "slides/eks.png", 5.4, 1.4, 7.5, 5.2)
 
 # 10. kubernetes and helm ------------------------------------------------
 s = new_slide("Kubernetes and Helm", (
@@ -295,8 +295,7 @@ bullets(s, 0.6, 1.4, 4.4, 5, [
     "Probes: /health and /ready",
     "Postgres with a PVC",
 ], size=22)
-picture(s, "14-kubectl-pods.png", 5.2, 1.4, 7.7, 2.5)
-picture(s, "16-helm-list.png", 5.2, 4.1, 7.7, 2.5)
+picture(s, "slides/pods.png", 5.2, 1.4, 7.7, 5.2)
 
 # 11. ingress and hpa ----------------------------------------------------
 s = new_slide("Ingress and autoscaling", (
@@ -304,15 +303,16 @@ s = new_slide("Ingress and autoscaling", (
     "address. For autoscaling, the HPA watches backend CPU. My load script sends steady traffic, "
     "CPU rises, and the replica count grows."), 11)
 picture(s, "17-ingress-app.png", 0.6, 1.3, 6.1, 5.4)
-picture(s, "19-hpa-scaling.png", 6.9, 1.3, 6.0, 5.4)
+picture(s, "slides/hpa.png", 6.9, 1.3, 6.0, 5.4)
 
 # 12. monitoring ---------------------------------------------------------
 s = new_slide("Monitoring", (
     "Prometheus scrapes the backend metrics endpoint, and the target is up. Grafana has a "
     "provisioned dashboard with request rate, latency and error rate, plus CPU and replicas. "
     "You can see them move during the load test."), 12)
-picture(s, "20-prometheus-targets.png", 0.6, 1.3, 5.2, 5.4)
-picture(s, "21-grafana-dashboard.png", 6.0, 1.3, 6.9, 5.4)
+picture(s, "21-grafana-dashboard.png", 0.6, 1.3, 7.4, 5.4)
+picture(s, "20-prometheus-targets.png", 8.3, 1.5, 4.6, 2.4)
+text_box(s, 8.3, 4.2, 4.6, 2.0, ["Target ironpass-backend", "4 of 4 UP", "Dashboard is provisioned from a ConfigMap"], size=18, color=SOFT)
 
 # 13. troubleshooting ----------------------------------------------------
 s = new_slide("Troubleshooting lab", (
@@ -326,7 +326,7 @@ bullets(s, 0.6, 1.4, 4.4, 5, [
     "Tools: describe, events, endpoints",
     "Fix notes in troubleshooting/",
 ], size=22)
-picture(s, "23-troubleshooting.png", 5.2, 1.4, 7.7, 5.2)
+picture(s, "slides/trouble.png", 5.2, 1.4, 7.7, 5.2)
 
 # 14. learned ------------------------------------------------------------
 s = new_slide("What I learned", (
