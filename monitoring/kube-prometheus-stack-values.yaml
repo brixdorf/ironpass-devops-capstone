@@ -1,0 +1,48 @@
+# Values for the kube-prometheus-stack Helm chart.
+# Install with scripts/install-monitoring.sh.
+
+# Prometheus looks at ServiceMonitors in every namespace, not only the ones
+# that carry the chart's release label. This is how the ironpass backend gets
+# picked up from the ironpass namespace.
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorNamespaceSelector: {}
+    podMonitorSelectorNilUsesHelmValues: false
+    retention: 12h
+    resources:
+      requests:
+        cpu: 100m
+        memory: 400Mi
+      limits:
+        memory: 800Mi
+    # no persistent volume, the demo cluster does not keep old metrics
+    storageSpec: {}
+
+grafana:
+  enabled: true
+  # the sidecar loads every ConfigMap with the label grafana_dashboard=1
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+      labelValue: "1"
+      searchNamespace: ALL
+  defaultDashboardsTimezone: browser
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+
+alertmanager:
+  enabled: false
+
+# keep the footprint small, the nodes are only t3.medium
+kubeEtcd:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeProxy:
+  enabled: false
