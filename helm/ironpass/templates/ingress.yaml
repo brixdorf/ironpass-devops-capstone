@@ -1,0 +1,30 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "ironpass.name" . }}
+  labels:
+    {{- include "ironpass.labels" . | nindent 4 }}
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  rules:
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "ironpass.name" . }}-backend
+                port:
+                  number: {{ .Values.backend.servicePort }}
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "ironpass.name" . }}-frontend
+                port:
+                  number: {{ .Values.frontend.servicePort }}
+      {{- if .Values.ingress.host }}
+      host: {{ .Values.ingress.host }}
+      {{- end }}
+{{- end }}
