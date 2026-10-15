@@ -11,6 +11,13 @@ module "eks" {
 
   cluster_endpoint_public_access = true
 
+  # keep the demo small: no extra KMS key and no control plane log group,
+  # both would stay behind after destroy and cost money
+  create_kms_key              = false
+  cluster_encryption_config   = {}
+  create_cloudwatch_log_group = false
+  cluster_enabled_log_types   = []
+
   # the person running terraform becomes cluster admin
   enable_cluster_creator_admin_permissions = true
 
