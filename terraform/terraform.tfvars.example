@@ -1,0 +1,17 @@
+# Copy this file to terraform.tfvars and change the values you need.
+# terraform.tfvars is ignored by git. Never put access keys in here.
+
+aws_region         = "ap-south-1"
+project            = "ironpass"
+environment        = "dev"
+cluster_name       = "ironpass-eks"
+kubernetes_version = "1.35"
+
+node_instance_type = "t3.medium"
+node_desired_size  = 2
+node_min_size      = 2
+node_max_size      = 3
+
+# repository that is allowed to deploy through GitHub OIDC
+github_repository = "brixdorf/ironpass-devops-capstone"
+github_branch     = "main"
