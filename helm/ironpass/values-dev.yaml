@@ -1,0 +1,23 @@
+# Small settings for a laptop or a throwaway cluster.
+backend:
+  replicas: 2
+  resources:
+    requests:
+      cpu: 50m
+      memory: 96Mi
+    limits:
+      cpu: 300m
+      memory: 192Mi
+
+frontend:
+  replicas: 2
+
+postgres:
+  storage:
+    size: 1Gi
+
+ingress:
+  host: ironpass.local
+
+hpa:
+  maxReplicas: 3

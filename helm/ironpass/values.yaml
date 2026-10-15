@@ -1,0 +1,64 @@
+# Default values. Use values-dev.yaml or values-prod.yaml on top of this file.
+
+backend:
+  image: ghcr.io/brixdorf/ironpass-backend
+  tag: latest
+  replicas: 2
+  containerPort: 8000
+  servicePort: 8000
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 256Mi
+
+frontend:
+  image: ghcr.io/brixdorf/ironpass-frontend
+  tag: latest
+  replicas: 2
+  containerPort: 8080
+  servicePort: 80
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+
+postgres:
+  image: postgres:16-alpine
+  database: ironpass
+  username: ironpass
+  # leave empty to get a random password that is kept between upgrades
+  password: ""
+  port: 5432
+  storage:
+    size: 2Gi
+    # empty means the cluster default storage class
+    className: ""
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+ingress:
+  enabled: true
+  className: nginx
+  # empty host matches any host name, which suits a bare load balancer address
+  host: ""
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 50
+
+serviceMonitor:
+  enabled: true
+  interval: 15s

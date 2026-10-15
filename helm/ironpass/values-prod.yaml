@@ -1,0 +1,16 @@
+# Settings used for the EKS cluster.
+backend:
+  replicas: 2
+
+frontend:
+  replicas: 2
+
+postgres:
+  storage:
+    size: 5Gi
+    className: ironpass-gp3
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 50
