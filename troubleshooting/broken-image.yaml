@@ -1,0 +1,25 @@
+# Lab 1: this Deployment never starts.
+# Apply it, then find out why with kubectl get pods and kubectl describe pod.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ironpass-broken-image
+  namespace: ironpass
+  labels:
+    lab: broken-image
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lab: broken-image
+  template:
+    metadata:
+      labels:
+        lab: broken-image
+    spec:
+      containers:
+        - name: backend
+          # this tag was never pushed to the registry
+          image: ghcr.io/brixdorf/ironpass-backend:v9.9.9-does-not-exist
+          ports:
+            - containerPort: 8000

@@ -1,0 +1,39 @@
+# Lab 2: the pods are Running but the Service has no endpoints.
+# Apply it, then compare the Service selector with the pod labels.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ironpass-broken-service
+  namespace: ironpass
+  labels:
+    lab: broken-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lab: broken-service
+  template:
+    metadata:
+      labels:
+        lab: broken-service
+        tier: web
+    spec:
+      containers:
+        - name: web
+          image: nginxinc/nginx-unprivileged:1.30-alpine3.24
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ironpass-broken-service
+  namespace: ironpass
+spec:
+  type: ClusterIP
+  selector:
+    # typo: the pods are labelled tier=web
+    tier: webb
+  ports:
+    - port: 80
+      targetPort: 8080
