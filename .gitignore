@@ -39,3 +39,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# raw command output kept for screenshots
+docs/evidence/
