@@ -19,8 +19,13 @@ explorer.exe .
 | GitHub repo | https://github.com/brixdorf/ironpass-devops-capstone |
 | Local compose app | http://localhost:3000 |
 
-Grafana login is `admin` and the password is `prom-operator` (the default of the kube-prometheus-stack chart).
-It is only reachable through the port-forward, never from the internet.
+Grafana login: user `admin`. The chart creates a random password and keeps it in a Kubernetes secret, so it is not stored in git. Print it with:
+
+```bash
+kubectl get secret -n monitoring kube-prometheus-stack-grafana -o jsonpath='{.data.admin-password}' | base64 -d; echo
+```
+
+Grafana is only reachable through the port-forward, never from the internet.
 
 ## Port-forwards for Windows
 
