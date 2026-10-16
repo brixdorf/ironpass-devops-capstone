@@ -20,7 +20,6 @@ ACCENT = {
 # file name, Lucide icon, accent colour, alt text
 ICONS = [
     ("presentation", "presentation", "lime", "Presentation"),
-    ("video", "video", "coral", "Video"),
     ("pdf", "file-text", "amber", "PDF"),
     ("glance-endpoints", "plug", "lime", "Endpoints"),
     ("glance-tests", "flask-conical", "coral", "Tests"),
@@ -37,7 +36,6 @@ ICONS = [
     ("kubernetes", "ship-wheel", "violet", "Kubernetes"),
     ("terraform", "server-cog", "violet", "Terraform"),
     ("cicd", "git-merge", "amber", "CI/CD"),
-    ("security", "shield-check", "coral", "Security"),
     ("monitoring", "activity", "cyan", "Monitoring"),
     ("troubleshooting", "wrench", "coral", "Troubleshooting"),
     ("rubric", "list-checks", "amber", "Rubric"),

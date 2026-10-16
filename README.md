@@ -394,8 +394,6 @@ Details worth knowing:
 <img src="docs/screenshots/08d-trivy-gate-findings.png" alt="The findings that made the red run fail" width="800">
 <img src="docs/screenshots/08e-ci-kind-smoke-test.png" alt="Smoke test on kind inside the pipeline" width="800">
 
-See [docs/SECURITY.md](docs/SECURITY.md) for what Trivy scanned and what the result means.
-
 <p align="right"><a href="#top">Back to top</a></p>
 
 </details>
@@ -464,11 +462,11 @@ One row per course module: the points it is worth, what the project does for it,
 | M3 Git and GitHub | 5 | 100+ small commits, `.gitignore`, no secrets in the repository | [.gitignore](.gitignore), [screenshot](docs/screenshots/03-github-commit-history.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M4 Docker | 10 | Two non-root images, multi-stage frontend, Compose with health checks | [backend/Dockerfile](backend/Dockerfile), [frontend/Dockerfile](frontend/Dockerfile), [docker-compose.yml](docker-compose.yml), [screenshot](docs/screenshots/04-docker-compose-up-and-ps.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M5 CI/CD | 15 | Test, build once, scan, push the same image to GHCR, kind smoke test, deploy to EKS | [ci-cd.yml](.github/workflows/ci-cd.yml), [run](docs/screenshots/06-github-actions-green-run.png), [registry](docs/screenshots/07-ghcr-packages.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
-| M6 Trivy | 5 | Both images scanned, the pipeline fails on fixable HIGH or CRITICAL findings | [SECURITY.md](docs/SECURITY.md), [clean scan](docs/screenshots/08-trivy-scan-backend-clean.png), [red run](docs/screenshots/08c-trivy-gate-red-run.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M6 Trivy | 5 | Both images scanned, the pipeline fails on fixable HIGH or CRITICAL findings | [clean scan](docs/screenshots/08-trivy-scan-backend-clean.png), [red run](docs/screenshots/08c-trivy-gate-red-run.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M7 Terraform | 15 | VPC, EKS, node group, GitHub OIDC role, teardown script | [terraform](terraform), [plan](docs/screenshots/09-terraform-plan.png), [VPC](docs/screenshots/10-aws-vpc-subnets.png), [EKS](docs/screenshots/11-aws-eks-cluster-and-nodegroup.png), [teardown.sh](scripts/teardown.sh) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M8 Kubernetes and Helm | 15 | Helm chart, Ingress, HPA, probes, PVC, troubleshooting lab | [k8s](k8s), [helm/ironpass](helm/ironpass), [pods](docs/screenshots/14-kubectl-get-pods.png), [helm list](docs/screenshots/16-helm-list.png), [ingress](docs/screenshots/17-app-through-traefik-ingress.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M9 Observability | 10 | /metrics, ServiceMonitor, Prometheus targets, Grafana dashboard as code | [monitoring](monitoring), [targets](docs/screenshots/20-prometheus-targets.png), [dashboard](docs/screenshots/21-grafana-dashboard.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
-| M10 Presentation and docs | 5 | This README, demo guide, 20 slides, video script | [DEMO.md](docs/DEMO.md), [slides (PPTX)](IronPass-Presentation.pptx), [slides (PDF)](IronPass-Presentation.pdf), [VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M10 Presentation and docs | 5 | This README, 20 slides, the video | [video](https://www.loom.com/share/edf9d6c439ef47bc933275d064a433ac), [slides](https://docs.google.com/presentation/d/1zuin9D52KBy6R9sv4_vkBsBlexBDfg_IK_NvHW32jPU/edit?usp=sharing), [slides (PPTX)](IronPass-Presentation.pptx), [slides (PDF)](IronPass-Presentation.pdf) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 
 No criterion was skipped, so no feature had to replace another one.
 
@@ -492,8 +490,8 @@ terraform/          VPC, EKS and GitHub OIDC
 monitoring/         kube-prometheus-stack values and notes
 troubleshooting/    three broken manifests for practice
 scripts/            bootstrap, monitoring install, load test, smoke test, teardown
-docs/               demo guide, security note, versions, troubleshooting guide, video script, screenshots
-docs/assets/        logo.svg, social-preview.png (1280 x 640 for the GitHub repository), README icons
+docs/               versions, troubleshooting guide, screenshots
+docs/assets/        logo.svg, watch-video.svg, social-preview.png (1280 x 640 for the GitHub repository), README icons
 .github/workflows/  the CI/CD pipeline
 IronPass-Presentation.pptx, IronPass-Presentation.pdf
 docker-compose.yml
