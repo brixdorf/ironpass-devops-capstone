@@ -1,50 +1,75 @@
+<a id="top"></a>
+<h1 align="center">IronPass</h1>
+
+<p align="center">A gym membership app, taken from code on a laptop to a monitored Kubernetes cluster on AWS.</p>
+
+<!-- EDIT THIS LINE (1 of 2): replace REPLACE_WITH_SLIDES_ID with the id of your Google Slides link -->
+<p align="center"><img src="docs/assets/icons/presentation.svg" width="28" height="28" alt="Presentation" align="absmiddle"> <b>Presentation, Google Slides:</b> Read the 20 slide walkthrough<br><a href="https://docs.google.com/presentation/d/REPLACE_WITH_SLIDES_ID/edit?usp=sharing">https://docs.google.com/presentation/d/REPLACE_WITH_SLIDES_ID/edit?usp=sharing</a></p>
+
+<!-- EDIT THIS LINE (2 of 2): replace REPLACE_WITH_VIDEO_ID with the id of your Loom link -->
+<p align="center"><img src="docs/assets/icons/video.svg" width="28" height="28" alt="Video" align="absmiddle"> <b>Video, Loom:</b> Watch the 2 minute demo<br><a href="https://www.loom.com/share/REPLACE_WITH_VIDEO_ID">https://www.loom.com/share/REPLACE_WITH_VIDEO_ID</a></p>
+
+<p align="center"><img src="docs/assets/icons/pdf.svg" width="28" height="28" alt="PDF copy" align="absmiddle"> <b>PDF copy:</b> The same slides as a PDF, in this repo<br><a href="IronPass-Presentation.pdf">IronPass-Presentation.pdf</a></p>
+
 <p align="center">
-  <a href="https://docs.google.com/presentation/d/REPLACE_WITH_SLIDES_ID/edit?usp=sharing"><img alt="Presentation on Google Slides" src="https://img.shields.io/badge/PRESENTATION-Google%20Slides-F4B400?style=for-the-badge&logo=googleslides&logoColor=white"></a>
-  <a href="IronPass-Presentation.pdf"><img alt="PDF copy of the presentation" src="https://img.shields.io/badge/PDF%20copy-in%20this%20repo-6B7280?style=flat-square&logo=adobeacrobatreader&logoColor=white"></a>
-  &nbsp;&nbsp;
-  <a href="https://www.loom.com/share/REPLACE_WITH_VIDEO_ID"><img alt="Video walkthrough on Loom" src="https://img.shields.io/badge/VIDEO-Loom%20walkthrough-625DF5?style=for-the-badge&logo=loom&logoColor=white"></a>
+  <img src="docs/screenshots/01-app-running-localhost-3000.png" alt="The IronPass dashboard with the member table, the check-in panel and the activity feed" width="800">
+  <br><i>The IronPass dashboard running locally, after a new member was signed up.</i>
 </p>
 
-# IronPass
+<table align="center"><tr><td align="center" width="150"><img src="docs/assets/icons/glance-endpoints.svg" width="28" height="28" alt="Endpoints"><br><b>15</b><br><sub>API endpoints</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-tests.svg" width="28" height="28" alt="Tests"><br><b>32</b><br><sub>tests pass</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pipeline.svg" width="28" height="28" alt="Pipeline time"><br><b>5 min 8 s</b><br><sub>pipeline run</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pods.svg" width="28" height="28" alt="Pods"><br><b>5</b><br><sub>pods on EKS</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-targets.svg" width="28" height="28" alt="Prometheus targets"><br><b>19</b><br><sub>Prometheus targets up</sub></td></tr></table>
 
-[![CI](https://github.com/brixdorf/ironpass-devops-capstone/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/brixdorf/ironpass-devops-capstone/actions/workflows/ci-cd.yml)
-![Python](https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
-![Helm](https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=white)
-![Traefik](https://img.shields.io/badge/Traefik-24A1C1?logo=traefikproxy&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-EKS-FF9900?logo=amazonaws&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
+IronPass is a small web app for a gym front desk. Staff sign new members up, see who is active or expired, and check people in at the door. The project shows the whole journey of an app, from the first commit to a monitored cluster. A student built it to learn DevOps.
 
-## What is IronPass?
+> [!IMPORTANT]
+> **The one rule that matters:** if a member's plan has expired, the check-in is refused. The API answers with status 409 and the screen shows a red message with the expiry date. This rule is enforced in the API and covered by tests.
 
-IronPass is a small web app for a gym front desk. Staff sign new members up, see who is active or expired, and check people in at the door. One rule keeps the gym safe: **if a member's plan has expired, the check-in is refused.**
+<h2><img src="docs/assets/icons/built-with.svg" width="28" height="28" alt="Built with" align="absmiddle"> Built with</h2>
 
-The project shows the whole journey of an app, from code on a laptop to a monitored Kubernetes cluster on AWS. It was built by a student to learn DevOps.
+<table>
+<tr><td><b>Code</b></td><td><img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"> <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"> <img alt="React" src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"> <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"></td></tr>
+<tr><td><b>Ship</b></td><td><img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"> <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white"> <img alt="Trivy" src="https://img.shields.io/badge/Trivy-1904DA?style=flat-square&logo=trivy&logoColor=white"></td></tr>
+<tr><td><b>Run</b></td><td><img alt="Kubernetes" src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white"> <img alt="Helm" src="https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white"> <img alt="Traefik" src="https://img.shields.io/badge/Traefik-24A1C1?style=flat-square&logo=traefikproxy&logoColor=white"> <img alt="Terraform" src="https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white"> <img alt="AWS EKS" src="https://img.shields.io/badge/AWS%20EKS-FF9900?style=flat-square&logo=amazonaws&logoColor=white"></td></tr>
+<tr><td><b>Watch</b></td><td><img alt="Prometheus" src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white"> <img alt="Grafana" src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white"></td></tr>
+</table>
+
+<h2><img src="docs/assets/icons/how-it-works.svg" width="28" height="28" alt="How it works" align="absmiddle"> How it works in five steps</h2>
+
+1. **You write code** and run `git push`.
+2. **GitHub Actions** tests the code, builds two images (backend and frontend), scans them for known security holes and stores them in a registry called GHCR.
+3. **Terraform** has already built the network and the Kubernetes cluster on AWS (EKS).
+4. **Helm** installs the new images on the cluster. **Traefik** sends visitors to the right pod, and the autoscaler adds pods when traffic grows.
+5. **Prometheus** collects numbers from the app and **Grafana** draws them as graphs.
 
 ```mermaid
 flowchart LR
-  dev[Developer] -->|git push| gh[GitHub]
-  gh --> ci[GitHub Actions]
-  ci -->|test, build, scan| img[Images in GHCR]
-  tf[Terraform] --> aws[AWS VPC and EKS]
+  dev["Developer"] -->|git push| gh["GitHub"]
+  gh --> ci["GitHub Actions"]
+  ci -->|test, build, scan| img["Images in GHCR"]
+  tf["Terraform"] --> aws["AWS VPC and EKS"]
   img -->|helm upgrade| aws
-  aws --> app[IronPass pods]
-  app -->|/metrics| prom[Prometheus]
-  prom --> graf[Grafana]
+  aws --> app["IronPass pods"]
+  app -->|/metrics| prom["Prometheus"]
+  prom --> graf["Grafana"]
+
+  classDef code fill:#0B1020,stroke:#C6FF3D,stroke-width:2px,color:#C6FF3D
+  classDef ship fill:#0B1020,stroke:#FFB547,stroke-width:2px,color:#FFB547
+  classDef infra fill:#0B1020,stroke:#A58BFF,stroke-width:2px,color:#A58BFF
+  classDef watch fill:#0B1020,stroke:#22D3EE,stroke-width:2px,color:#22D3EE
+  class dev,gh code
+  class ci,img ship
+  class tf,aws,app infra
+  class prom,graf watch
 ```
 
+> [!NOTE]
 > **Live on AWS while recording, then torn down to avoid cost.** The cluster is not running when you read this. See the video and the screenshots below.
 
-## Quick start
+<p align="right"><a href="#top">Back to top</a></p>
 
-You need Docker. Two commands:
+<h2><img src="docs/assets/icons/quick-start.svg" width="28" height="28" alt="Quick start" align="absmiddle"> Quick start</h2>
+
+> [!TIP]
+> You only need Docker. Two commands start the database, the API and the web page.
 
 ```bash
 git clone https://github.com/brixdorf/ironpass-devops-capstone.git && cd ironpass-devops-capstone
@@ -54,13 +79,16 @@ docker compose up --build
 Open http://localhost:3000 for the app and http://localhost:8000/docs for the API pages. Stop it with `docker compose down`.
 
 <p align="center">
-  <img src="docs/screenshots/01-app-running-localhost-3000.png" alt="IronPass dashboard in the browser after a new member was added" width="760">
+  <img src="docs/screenshots/01b-app-mobile-390.png" alt="The same page on a phone, 390 pixels wide: summary cards first, then the member cards" width="260">
+  <br><i>The same page on a phone. The table turns into cards.</i>
 </p>
 
 The sections below hold the technical details. Each one is collapsed, click a title to open it.
 
 <details>
-<summary><b>Tech stack</b></summary>
+<summary><img src="docs/assets/icons/built-with.svg" width="24" height="24" alt="Tech stack" align="absmiddle"> <b>Tech stack</b></summary>
+
+This table lists every tool in the project and the exact version that was tested.
 
 | Layer | What | Version |
 | --- | --- | --- |
@@ -78,10 +106,14 @@ Every version is pinned. The full list with the date it was checked is in [docs/
 
 Why Traefik: the Kubernetes project retired ingress-nginx in March 2026 (no more fixes or security patches). Traefik is maintained, implements the normal Ingress API, and is used the same way on kind, Minikube and EKS.
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>API endpoints with example requests</b></summary>
+<summary><img src="docs/assets/icons/api.svg" width="24" height="24" alt="API endpoints" align="absmiddle"> <b>API endpoints with example requests</b></summary>
+
+An API is how the web page talks to the server, and REST means each address does one clear job, for example listing members. This part shows every address with real requests and real answers.
 
 The API is plain REST under `/api`. Allowed enum values are written in capital letters: plan types `DAY_PASS`, `MONTHLY`, `QUARTERLY`, `ANNUAL`, and member statuses `ACTIVE`, `FROZEN`, `CANCELLED` (`EXPIRED` is worked out from the expiry date).
 
@@ -135,10 +167,14 @@ $ curl -s http://localhost:8000/api/stats
 <img src="docs/screenshots/25-checkin-rejected-expired-plan.png" alt="The UI refuses the check-in of an expired member" width="700">
 <img src="docs/screenshots/24-database-members-table.png" alt="The members table inside PostgreSQL on the cluster" width="600">
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Run the backend and frontend by hand (no Docker)</b></summary>
+<summary><img src="docs/assets/icons/run-by-hand.svg" width="24" height="24" alt="Run by hand" align="absmiddle"> <b>Run the backend and frontend by hand (no Docker)</b></summary>
+
+Use this if you want to start the backend (the server code with the rules and the database access) and the frontend (the web page) yourself, without Docker.
 
 You need Python 3.14, Node 24 and a PostgreSQL database.
 
@@ -176,10 +212,14 @@ pytest -v
 
 The 32 tests cover validation (a wrong plan type returns 422), 404 for missing members, the expired plan rule, the stats endpoint and the activity feed.
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Run with Docker</b></summary>
+<summary><img src="docs/assets/icons/docker.svg" width="24" height="24" alt="Docker" align="absmiddle"> <b>Run with Docker</b></summary>
+
+Docker packs an app and everything it needs into an image (a ready-to-run package), so it behaves the same on every computer.
 
 Both images run as a normal user, not root.
 
@@ -198,10 +238,14 @@ docker run --rm -e BACKEND_URL=http://my-backend:8000 -p 3000:8080 ironpass-fron
 
 The nginx address of the backend is **not** written into the image. The container reads the variable `BACKEND_URL` when it starts, so the same image works in Compose (`http://backend:8000`) and in Kubernetes (`http://ironpass-backend:8000`).
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Run with Docker Compose</b></summary>
+<summary><img src="docs/assets/icons/compose.svg" width="24" height="24" alt="Docker Compose" align="absmiddle"> <b>Run with Docker Compose</b></summary>
+
+Docker Compose starts several containers, here the database, the backend and the frontend, together with one command.
 
 ```bash
 docker compose up --build
@@ -218,10 +262,14 @@ Proof: three clean starts in a row, everything healthy each time, and a record t
 <img src="docs/screenshots/04b-docker-compose-three-clean-starts.png" alt="Three clean starts, all healthy" width="800">
 <img src="docs/screenshots/04c-docker-compose-data-persists.png" alt="A record is still there after docker compose down and up" width="700">
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Run on Kubernetes (kind or Minikube, and EKS)</b></summary>
+<summary><img src="docs/assets/icons/kubernetes.svg" width="24" height="24" alt="Kubernetes" align="absmiddle"> <b>Run on Kubernetes (kind or Minikube, and EKS)</b></summary>
+
+Kubernetes (K8s) runs containers on a group of machines and restarts them when they fail. Helm is its package manager: one command installs the whole app. kind and Minikube are small clusters for a laptop, EKS is the Kubernetes service on AWS.
 
 Two ways to deploy, for two jobs:
 
@@ -275,10 +323,14 @@ Install, upgrade and rollback with `helm history` and `helm rollback`:
 <img src="docs/screenshots/19b-hpa-during-load.png" alt="kubectl get hpa during the load, 6 replicas" width="700">
 <img src="docs/screenshots/19c-load-test-script-timeline.png" alt="Timeline printed by the load script" width="800">
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Terraform (VPC and EKS on AWS)</b></summary>
+<summary><img src="docs/assets/icons/terraform.svg" width="24" height="24" alt="Terraform" align="absmiddle"> <b>Terraform (VPC and EKS on AWS)</b></summary>
+
+Terraform builds cloud networks and servers from text files (Infrastructure as Code), so the whole setup can be created or removed with one command.
 
 Files in `terraform/`: `versions.tf`, `main.tf`, `variables.tf`, `outputs.tf` and `terraform.tfvars.example`. Real `terraform.tfvars` and state files stay out of git.
 
@@ -306,10 +358,14 @@ Note on the nodes: this AWS account is on the free plan and refuses `t3.medium`,
 <img src="docs/screenshots/09b-terraform-module-upgrade.png" alt="plan and apply of the module upgrade, then no changes" width="700">
 <img src="docs/screenshots/27-teardown-dry-run.png" alt="The teardown script ready, dry run" width="800">
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>CI/CD pipeline (GitHub Actions)</b></summary>
+<summary><img src="docs/assets/icons/cicd.svg" width="24" height="24" alt="CI/CD" align="absmiddle"> <b>CI/CD pipeline (GitHub Actions)</b></summary>
+
+CI/CD means every code change is tested, built, scanned and delivered automatically. GitHub Actions is the tool that runs these steps, and Trivy is the scanner that looks for known security holes.
 
 `.github/workflows/ci-cd.yml` runs on every push to `main` and on pull requests (branches are written as a list).
 
@@ -340,10 +396,14 @@ Details worth knowing:
 
 See [docs/SECURITY.md](docs/SECURITY.md) for what Trivy scanned and what the result means.
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Monitoring (Prometheus and Grafana)</b></summary>
+<summary><img src="docs/assets/icons/monitoring.svg" width="24" height="24" alt="Monitoring" align="absmiddle"> <b>Monitoring (Prometheus and Grafana)</b></summary>
+
+Prometheus collects numbers (metrics) from the app and Grafana draws them as graphs, so you can see if the app is healthy.
 
 The backend exposes `/metrics`. Prometheus scrapes it through a ServiceMonitor, Grafana shows a dashboard that is provisioned as code (request rate, latency, error rate, replicas). Both the ServiceMonitor and the dashboard are part of the app's Helm chart, so they are deployed together with the application.
 
@@ -367,10 +427,14 @@ More in [monitoring/README.md](monitoring/README.md).
 <img src="docs/screenshots/20-prometheus-targets.png" alt="Prometheus targets, ironpass-backend UP" width="800">
 <img src="docs/screenshots/21-grafana-dashboard.png" alt="Grafana dashboard with live data" width="800">
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Troubleshooting lab</b></summary>
+<summary><img src="docs/assets/icons/troubleshooting.svg" width="24" height="24" alt="Troubleshooting" align="absmiddle"> <b>Troubleshooting lab</b></summary>
+
+Three Kubernetes manifests that are broken on purpose, to practise finding and fixing common problems.
 
 Three manifests in `troubleshooting/` are broken on purpose, with the exact diagnosis steps in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md). Each one was applied on the cluster with `kubectl apply -f`, diagnosed with `get pods -n`, `describe pod`, `get events`, `get endpoints` and `get pods --show-labels`, fixed and removed.
 
@@ -384,32 +448,40 @@ Three manifests in `troubleshooting/` are broken on purpose, with the exact diag
 <img src="docs/screenshots/23b-troubleshooting-lab2-service.png" alt="Lab 2, Service without endpoints" width="800">
 <img src="docs/screenshots/23c-troubleshooting-lab3-crashloop.png" alt="Lab 3, CrashLoopBackOff" width="800">
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Rubric: where to find the proof for M1 to M10</b></summary>
+<summary><img src="docs/assets/icons/rubric.svg" width="24" height="24" alt="Rubric" align="absmiddle"> <b>Rubric: where to find the proof for M1 to M10</b></summary>
 
-| Module | Topic | Folder or screenshot |
-| --- | --- | --- |
-| M1 | Application | `backend/`, `frontend/`, `docker-compose.yml`, `docs/screenshots/01-app-running-localhost-3000.png` |
-| M2 | Testing | `backend/tests/`, `backend/pytest.ini`, `docs/screenshots/02-pytest-verbose.png` |
-| M3 | Git and GitHub | `.gitignore`, `docs/screenshots/03-github-commit-history.png` |
-| M4 | Docker | `backend/Dockerfile`, `frontend/Dockerfile`, `docker-compose.yml`, `docs/screenshots/04-docker-compose-up-and-ps.png` |
-| M5 | CI/CD | `.github/workflows/ci-cd.yml`, `docs/screenshots/06-github-actions-green-run.png`, `docs/screenshots/07-ghcr-packages.png` |
-| M6 | Trivy | `docs/SECURITY.md`, `docs/screenshots/08-trivy-scan-backend-clean.png`, `docs/screenshots/08c-trivy-gate-red-run.png` |
-| M7 | Terraform | `terraform/`, `docs/screenshots/09-terraform-plan.png`, `docs/screenshots/10-aws-vpc-subnets.png`, `docs/screenshots/11-aws-eks-cluster-and-nodegroup.png`, `scripts/teardown.sh` |
-| M8 | Kubernetes and Helm | `k8s/`, `helm/ironpass/`, `docs/screenshots/14-kubectl-get-pods.png`, `docs/screenshots/16-helm-list.png`, `docs/screenshots/17-app-through-traefik-ingress.png` |
-| M9 | Observability | `monitoring/`, `docs/screenshots/18-metrics-curl.png`, `docs/screenshots/20-prometheus-targets.png`, `docs/screenshots/21-grafana-dashboard.png` |
-| M10 | Docs and demo | this README, `docs/DEMO.md`, `IronPass-Presentation.pptx`, `docs/VIDEO_SCRIPT.md` |
+One row per course module: the points it is worth, what the project does for it, where to look, and whether it is done.
+
+| Module | Points | What it covers | Proof | Done |
+| --- | --- | --- | --- | --- |
+| M1 Application | 10 | React frontend, FastAPI backend, PostgreSQL, 15 endpoints, one real business rule | [backend](backend), [frontend](frontend), [screenshot](docs/screenshots/01-app-running-localhost-3000.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M2 Testing | 10 | 32 pytest tests: validation, 404, the expired plan rule, stats | [tests](backend/tests), [screenshot](docs/screenshots/02-pytest-verbose.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M3 Git and GitHub | 5 | 100+ small commits, `.gitignore`, no secrets in the repository | [.gitignore](.gitignore), [screenshot](docs/screenshots/03-github-commit-history.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M4 Docker | 10 | Two non-root images, multi-stage frontend, Compose with health checks | [backend/Dockerfile](backend/Dockerfile), [frontend/Dockerfile](frontend/Dockerfile), [docker-compose.yml](docker-compose.yml), [screenshot](docs/screenshots/04-docker-compose-up-and-ps.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M5 CI/CD | 15 | Test, build once, scan, push the same image to GHCR, kind smoke test, deploy to EKS | [ci-cd.yml](.github/workflows/ci-cd.yml), [run](docs/screenshots/06-github-actions-green-run.png), [registry](docs/screenshots/07-ghcr-packages.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M6 Trivy | 5 | Both images scanned, the pipeline fails on fixable HIGH or CRITICAL findings | [SECURITY.md](docs/SECURITY.md), [clean scan](docs/screenshots/08-trivy-scan-backend-clean.png), [red run](docs/screenshots/08c-trivy-gate-red-run.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M7 Terraform | 15 | VPC, EKS, node group, GitHub OIDC role, teardown script | [terraform](terraform), [plan](docs/screenshots/09-terraform-plan.png), [VPC](docs/screenshots/10-aws-vpc-subnets.png), [EKS](docs/screenshots/11-aws-eks-cluster-and-nodegroup.png), [teardown.sh](scripts/teardown.sh) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M8 Kubernetes and Helm | 15 | Helm chart, Ingress, HPA, probes, PVC, troubleshooting lab | [k8s](k8s), [helm/ironpass](helm/ironpass), [pods](docs/screenshots/14-kubectl-get-pods.png), [helm list](docs/screenshots/16-helm-list.png), [ingress](docs/screenshots/17-app-through-traefik-ingress.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M9 Observability | 10 | /metrics, ServiceMonitor, Prometheus targets, Grafana dashboard as code | [monitoring](monitoring), [targets](docs/screenshots/20-prometheus-targets.png), [dashboard](docs/screenshots/21-grafana-dashboard.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M10 Presentation and docs | 5 | This README, demo guide, 20 slides, video script | [DEMO.md](docs/DEMO.md), [slides (PPTX)](IronPass-Presentation.pptx), [slides (PDF)](IronPass-Presentation.pdf), [VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 
 No criterion was skipped, so no feature had to replace another one.
 
 The `terraform destroy` proof for M7 comes from `scripts/teardown.sh`, which saves its output in `docs/terraform-destroy-output.txt`.
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
 
 <details>
-<summary><b>Repository structure and cleanup</b></summary>
+<summary><img src="docs/assets/icons/structure.svg" width="24" height="24" alt="Repository structure" align="absmiddle"> <b>Repository structure and cleanup</b></summary>
+
+Where things live in this repository, and how to remove the AWS resources when you are done.
 
 ```text
 backend/            FastAPI app (app/ with main, models, schemas, db, config, routers, services), Alembic, tests
@@ -428,4 +500,12 @@ docker-compose.yml
 
 **Cleanup.** The AWS cluster costs money while it runs. `scripts/teardown.sh --dry-run` prints the steps. `scripts/teardown.sh --yes` turns the deploy switch off, removes the Helm releases, volumes and load balancer, runs `terraform destroy`, checks that nothing tagged `Project=ironpass` is left, and removes the stale GitHub variables.
 
+<p align="right"><a href="#top">Back to top</a></p>
+
 </details>
+
+---
+
+<p align="center"><sub>Built by <a href="https://github.com/brixdorf">brixdorf</a> as a DevOps capstone project. Where everything lives: see <i>Repository structure and cleanup</i> above.<br>
+Fonts in the website and the slides: Unbounded, DM Sans, JetBrains Mono and Inter, all under the SIL Open Font License. Icons: Lucide (ISC) and Simple Icons (CC0).<br>
+<a href="#top">Back to top</a></sub></p>
