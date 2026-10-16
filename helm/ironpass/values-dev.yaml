@@ -26,7 +26,8 @@ postgres:
 
 ingress:
   className: traefik
-  host: ironpass.local
+  # empty host: any address that reaches the Ingress controller works, for example localhost
+  host: ""
 
 hpa:
   maxReplicas: 3

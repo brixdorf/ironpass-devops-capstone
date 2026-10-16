@@ -1,6 +1,8 @@
 # Live demo guide
 
 All commands run in the WSL terminal, inside the repo folder, unless it says Windows.
+The address of the load balancer only works **while the cluster is running**. After
+`scripts/teardown.sh` it is gone.
 
 ## Open the folder from Windows
 
@@ -8,24 +10,34 @@ All commands run in the WSL terminal, inside the repo folder, unless it says Win
 explorer.exe .
 ```
 
-## Addresses
+## Addresses (valid only while the cluster is running)
 
 | What | Address |
 | --- | --- |
-| App through the Ingress load balancer | http://aea24c31f836c49faba0abc48fe89ac5-70809690.ap-south-1.elb.amazonaws.com |
+| App through the Traefik Ingress | http://ab0016c869bfc4402884a19059ee9f8e-691966334.ap-south-1.elb.amazonaws.com |
 | Backend API docs and metrics | `kubectl port-forward` below, then http://localhost:8001/docs and http://localhost:8001/metrics |
 | Grafana | http://localhost:3001 |
 | Prometheus | http://localhost:9090 |
 | GitHub repo | https://github.com/brixdorf/ironpass-devops-capstone |
 | Local compose app | http://localhost:3000 |
 
-Grafana login: user `admin`. The chart creates a random password and keeps it in a Kubernetes secret, so it is not stored in git. Print it with:
+If the hostname is lost, read it again:
 
 ```bash
-kubectl get secret -n monitoring kube-prometheus-stack-grafana -o jsonpath='{.data.admin-password}' | base64 -d; echo
+kubectl get svc traefik -n traefik -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'; echo
 ```
 
-Grafana is only reachable through the port-forward, never from the internet.
+## Grafana login
+
+User: `admin`. The chart creates a random password and keeps it in a Kubernetes secret, so it is
+not written down anywhere. Print it when you need it:
+
+```bash
+kubectl get secret kube-prometheus-stack-grafana -n monitoring -o jsonpath='{.data.admin-password}' | base64 -d; echo
+```
+
+Do not show this command's output on screen while recording. Grafana is only reachable through the
+port-forward, never from the internet.
 
 ## Port-forwards for Windows
 
@@ -43,42 +55,47 @@ Then open from Windows:
 - http://localhost:9090/targets for Prometheus targets
 - http://localhost:8001/docs for the Swagger page and http://localhost:8001/metrics for raw metrics
 
-If kubectl says the credentials expired, run `aws login` again and retry.
+If kubectl says the credentials expired, run `aws login` again and retry. Port 8001 is used
+for the backend so it does not clash with `docker compose` on port 8000.
 
 ## 10 step demo order
 
 This follows Part O of the course README.
 
 1. **Application.** Open the load balancer address. Sign up a member, then check in an expired member (Rohan Das) and show the rejection message.
-2. **API.** Open http://localhost:8001/docs (port-forward). Run GET `/api/members`, POST `/api/checkins` for an expired member, and DELETE a member.
+2. **API.** Open http://localhost:8001/docs. Run GET `/api/members`, POST `/api/checkins` for an expired member (409), POST `/api/plans` with `"plan_type": "WEEKLY"` (422), and DELETE a member.
 3. **Database.** Show the table inside the cluster:
    ```bash
    kubectl exec -n ironpass deploy/ironpass-postgres -- sh -c 'psql -U $POSTGRES_USER -d $POSTGRES_DB -c "select id, full_name, status, expires_on from members order by id;"'
    ```
 4. **Git.** Make a small change (for example the tagline in `frontend/src/App.jsx`), then `git add -A && git commit -m "Change dashboard tagline" && git push`.
-5. **CI, security and registry.** Run `gh run watch` or open the Actions tab. Show the pytest job, the Trivy steps, then the GHCR package with the SHA tag. The deploy job updates the cluster.
+5. **CI, security and registry.** Run `gh run watch` or open the Actions tab. Show the pytest job, the Trivy steps, the smoke test on kind, then the GHCR package with the SHA tag. The deploy job updates the cluster.
 6. **Terraform.** Show `terraform/` in the editor, then `terraform -chdir=terraform output` and `aws eks describe-cluster --name ironpass-eks --query cluster.status`.
 7. **Kubernetes and Helm.**
    ```bash
    kubectl get pods -n ironpass
    kubectl get svc -n ironpass
    helm list -n ironpass
+   helm history ironpass -n ironpass
    ```
-8. **Ingress and HPA.** Reload the load balancer address in the browser, then run the load script and watch the autoscaler:
+8. **Ingress and HPA.** Reload the load balancer address in the browser, then run the load script and watch the autoscaler in a second terminal:
    ```bash
-   URL=http://aea24c31f836c49faba0abc48fe89ac5-70809690.ap-south-1.elb.amazonaws.com ./scripts/load-test.sh
+   ./scripts/load-test.sh
    kubectl get hpa -n ironpass -w
    ```
 9. **Monitoring.** Show the Prometheus targets page (ironpass-backend UP) and the Grafana dashboard while the load test runs.
 10. **Failure simulation.**
     ```bash
     kubectl apply -f troubleshooting/broken-service.yaml
-    kubectl get svc,endpoints -n ironpass ironpass-broken-service
     kubectl get pods -n ironpass --show-labels -l lab=broken-service
-    kubectl patch svc ironpass-broken-service -n ironpass -p '{"spec":{"selector":{"tier":"web"}}}'
+    kubectl get svc,endpoints -n ironpass ironpass-broken-service
+    # fix the selector in the file (tier: web), then
+    kubectl apply -f troubleshooting/broken-service.yaml
     kubectl delete -f troubleshooting/
     ```
 
 ## After the demo
 
-Run `./scripts/teardown.sh --dry-run` to show the plan, and `./scripts/teardown.sh --yes` when you are finished. The AWS cluster costs money while it is running.
+Run `./scripts/teardown.sh --dry-run` to show the plan, and `./scripts/teardown.sh --yes` when you are
+finished. The AWS cluster costs money while it is running. After the teardown, add the teardown date
+to the README and commit `docs/terraform-destroy-output.txt`.
