@@ -63,6 +63,8 @@ flowchart LR
 
 > [!NOTE]
 > **Live on AWS while recording, then torn down to avoid cost.** The cluster is not running when you read this. See the video and the screenshots below.
+>
+> The infrastructure was torn down on 16 October 2026.
 
 <p align="right"><a href="#top">Back to top</a></p>
 
@@ -463,7 +465,7 @@ One row per course module: the points it is worth, what the project does for it,
 | M4 Docker | 10 | Two non-root images, multi-stage frontend, Compose with health checks | [backend/Dockerfile](backend/Dockerfile), [frontend/Dockerfile](frontend/Dockerfile), [docker-compose.yml](docker-compose.yml), [screenshot](docs/screenshots/04-docker-compose-up-and-ps.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M5 CI/CD | 15 | Test, build once, scan, push the same image to GHCR, kind smoke test, deploy to EKS | [ci-cd.yml](.github/workflows/ci-cd.yml), [run](docs/screenshots/06-github-actions-green-run.png), [registry](docs/screenshots/07-ghcr-packages.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M6 Trivy | 5 | Both images scanned, the pipeline fails on fixable HIGH or CRITICAL findings | [clean scan](docs/screenshots/08-trivy-scan-backend-clean.png), [red run](docs/screenshots/08c-trivy-gate-red-run.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
-| M7 Terraform | 15 | VPC, EKS, node group, GitHub OIDC role, teardown script | [terraform](terraform), [plan](docs/screenshots/09-terraform-plan.png), [VPC](docs/screenshots/10-aws-vpc-subnets.png), [EKS](docs/screenshots/11-aws-eks-cluster-and-nodegroup.png), [teardown.sh](scripts/teardown.sh) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
+| M7 Terraform | 15 | VPC, EKS, node group, GitHub OIDC role, teardown script | [terraform](terraform), [plan](docs/screenshots/09-terraform-plan.png), [VPC](docs/screenshots/10-aws-vpc-subnets.png), [EKS](docs/screenshots/11-aws-eks-cluster-and-nodegroup.png), [teardown.sh](scripts/teardown.sh), [destroy complete](docs/screenshots/29-terraform-destroy-complete.png), [AWS checked empty](docs/screenshots/30-aws-verified-empty.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M8 Kubernetes and Helm | 15 | Helm chart, Ingress, HPA, probes, PVC, troubleshooting lab | [k8s](k8s), [helm/ironpass](helm/ironpass), [pods](docs/screenshots/14-kubectl-get-pods.png), [helm list](docs/screenshots/16-helm-list.png), [ingress](docs/screenshots/17-app-through-traefik-ingress.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M9 Observability | 10 | /metrics, ServiceMonitor, Prometheus targets, Grafana dashboard as code | [monitoring](monitoring), [targets](docs/screenshots/20-prometheus-targets.png), [dashboard](docs/screenshots/21-grafana-dashboard.png) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
 | M10 Presentation and docs | 5 | This README, 20 slides, the video | [video](https://www.loom.com/share/edf9d6c439ef47bc933275d064a433ac), [slides](https://docs.google.com/presentation/d/1zuin9D52KBy6R9sv4_vkBsBlexBDfg_IK_NvHW32jPU/edit?usp=sharing), [slides (PPTX)](IronPass-Presentation.pptx), [slides (PDF)](IronPass-Presentation.pdf) | <img src="docs/assets/icons/check.svg" width="20" height="20" alt="Done" align="absmiddle"> |
@@ -471,6 +473,9 @@ One row per course module: the points it is worth, what the project does for it,
 No criterion was skipped, so no feature had to replace another one.
 
 The `terraform destroy` proof for M7 comes from `scripts/teardown.sh`, which saves its output in `docs/terraform-destroy-output.txt`.
+
+<img src="docs/screenshots/29-terraform-destroy-complete.png" alt="terraform destroy finished, 60 resources destroyed, state list is empty" width="800">
+<img src="docs/screenshots/30-aws-verified-empty.png" alt="The final check: nothing tagged Project=ironpass is left on AWS" width="500">
 
 <p align="right"><a href="#top">Back to top</a></p>
 

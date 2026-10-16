@@ -1,0 +1,1978 @@
+module.eks.data.aws_partition.current[0]: Reading...
+data.aws_availability_zones.available: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.eks_managed_node_group["main"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.data.aws_caller_identity.current[0]: Reading...
+aws_iam_openid_connect_provider.github: Refreshing state... [id=arn:aws:iam::<account>:oidc-provider/token.actions.githubusercontent.com]
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-03b814005d788cfd4]
+module.eks.module.eks_managed_node_group["main"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799]
+module.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.aws_iam_role.this[0]: Refreshing state... [id=ironpass-eks-cluster-20261015172019579000000001]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role.this[0]: Refreshing state... [id=main-eks-node-group-20261015172019579100000002]
+module.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=<account>]
+module.eks.data.aws_iam_session_context.current[0]: Reading...
+module.eks.data.aws_iam_session_context.current[0]: Read complete after 0s [id=arn:aws:iam::<account>:user/Romit-admin]
+data.aws_availability_zones.available: Read complete after 1s [id=ap-south-1]
+data.aws_iam_policy_document.github_assume_role: Reading...
+data.aws_iam_policy_document.github_assume_role: Read complete after 0s [id=2853281642]
+aws_iam_role.github_deploy: Refreshing state... [id=ironpass-github-deploy]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=ironpass-eks-cluster-20261015172019579000000001-20261015172028363100000009]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-0b4c9de44f14311a5]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-0aaa1c6a5080880d6]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-0eaf70c84690b1f8b]
+module.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-053bbf0432f16fbab]
+module.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-0774c9cd79694ae2b]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-0fe5630827f0018fd]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-0d5504f22bdbe210b]
+module.vpc.aws_route_table.private[0]: Refreshing state... [id=rtb-05733fa27bc4262bf]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0f96bde32d5b6efa9]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-06b5816ec763261f8]
+module.eks.aws_security_group.node[0]: Refreshing state... [id=sg-00cbfb97e15e1765c]
+module.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-0ba4a511054f06b80]
+module.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-07c8af0dc54788ef1]
+module.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-03098140d157c4098]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0480b339ce49b3c21]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-08123a27f52c28f51]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-0d5504f22bdbe210b1080289494]
+module.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-09974a31a5cd1ddc9]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=main-eks-node-group-20261015172019579100000002-20261015172028353000000008]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=main-eks-node-group-20261015172019579100000002-20261015172028052700000006]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Refreshing state... [id=main-eks-node-group-20261015172019579100000002-20261015172027456900000004]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.additional["ebs_csi"]: Refreshing state... [id=main-eks-node-group-20261015172019579100000002-20261015172027966400000005]
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-2835326372]
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-138459813]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-3432970958]
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-2217897772]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-1757501729]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-1579955355]
+module.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-1745609321]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-982320976]
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-575667107]
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-1806581511]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Refreshing state... [id=sgrule-369535960]
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-1299187898]
+module.vpc.aws_nat_gateway.this[0]: Refreshing state... [id=nat-082d85114599ff48e]
+module.vpc.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-05733fa27bc4262bf1080289494]
+module.eks.aws_eks_cluster.this[0]: Refreshing state... [id=ironpass-eks]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Refreshing state... [id=sg-0b291f90f72b2d6b2,Project]
+module.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Refreshing state... [id=sg-0b291f90f72b2d6b2,ManagedBy]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Refreshing state... [id=sg-0b291f90f72b2d6b2,Environment]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Reading...
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Reading...
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...
+module.eks.data.tls_certificate.this[0]: Reading...
+module.eks.aws_eks_access_entry.this["cluster_creator"]: Refreshing state... [id=ironpass-eks:arn:aws:iam::<account>:user/Romit-admin]
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...
+module.eks.time_sleep.this[0]: Refreshing state... [id=2026-10-16T05:32:37Z]
+module.eks.module.eks_managed_node_group["main"].module.user_data.null_resource.validate_cluster_service_cidr: Refreshing state... [id=7408303368796515503]
+module.eks.module.eks_managed_node_group["main"].data.aws_ssm_parameter.ami[0]: Reading...
+module.eks.module.eks_managed_node_group["main"].aws_launch_template.this[0]: Refreshing state... [id=lt-08556231326861ee2]
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Read complete after 0s [id=aws-ebs-csi-driver]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 1s [id=kube-proxy]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 2s [id=coredns]
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 2s [id=vpc-cni]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Refreshing state... [id=ironpass-eks:vpc-cni]
+module.eks.aws_eks_access_policy_association.this["cluster_creator_admin"]: Refreshing state... [id=ironpass-eks#arn:aws:iam::<account>:user/Romit-admin#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+module.eks.data.tls_certificate.this[0]: Read complete after 3s [id=1e3a331631939a1ae4a625cd4244a4963dabbfa2]
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::<account>:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/361736A4547EA5F9971FBA876DD939DC]
+data.aws_iam_policy_document.describe_cluster: Reading...
+aws_eks_access_entry.github_deploy: Refreshing state... [id=ironpass-eks:arn:aws:iam::<account>:role/ironpass-github-deploy]
+data.aws_iam_policy_document.describe_cluster: Read complete after 0s [id=3155358457]
+aws_iam_role_policy.describe_cluster: Refreshing state... [id=ironpass-github-deploy:describe-ironpass-cluster]
+module.eks.module.eks_managed_node_group["main"].data.aws_ssm_parameter.ami[0]: Read complete after 4s [id=/aws/service/eks/optimized-ami/1.35/amazon-linux-2023/x86_64/standard/recommended/release_version]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Refreshing state... [id=ironpass-eks:main-20261015175705102700000001]
+module.eks.aws_eks_addon.this["coredns"]: Refreshing state... [id=ironpass-eks:coredns]
+module.eks.aws_eks_addon.this["kube-proxy"]: Refreshing state... [id=ironpass-eks:kube-proxy]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Refreshing state... [id=ironpass-eks:aws-ebs-csi-driver]
+aws_eks_access_policy_association.github_deploy: Refreshing state... [id=ironpass-eks#arn:aws:iam::<account>:role/ironpass-github-deploy#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_eks_access_entry.github_deploy will be destroyed
+  - resource "aws_eks_access_entry" "github_deploy" {
+      - access_entry_arn  = "arn:aws:eks:ap-south-1:<account>:access-entry/ironpass-eks/role/<account>/ironpass-github-deploy/f8d0a04e-647d-50bc-c320-17c8b438ae24" -> null
+      - cluster_name      = "ironpass-eks" -> null
+      - created_at        = "2026-10-15T17:29:39Z" -> null
+      - id                = "ironpass-eks:arn:aws:iam::<account>:role/ironpass-github-deploy" -> null
+      - kubernetes_groups = [] -> null
+      - modified_at       = "2026-10-15T17:29:39Z" -> null
+      - principal_arn     = "arn:aws:iam::<account>:role/ironpass-github-deploy" -> null
+      - region            = "ap-south-1" -> null
+      - tags              = {} -> null
+      - tags_all          = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - type              = "STANDARD" -> null
+      - user_name         = "arn:aws:sts::<account>:assumed-role/ironpass-github-deploy/{{SessionName}}" -> null
+    }
+
+  # aws_eks_access_policy_association.github_deploy will be destroyed
+  - resource "aws_eks_access_policy_association" "github_deploy" {
+      - associated_at = "2026-10-15 17:29:40.059 +0000 UTC" -> null
+      - cluster_name  = "ironpass-eks" -> null
+      - id            = "ironpass-eks#arn:aws:iam::<account>:role/ironpass-github-deploy#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy" -> null
+      - modified_at   = "2026-10-15 17:29:40.059 +0000 UTC" -> null
+      - policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy" -> null
+      - principal_arn = "arn:aws:iam::<account>:role/ironpass-github-deploy" -> null
+      - region        = "ap-south-1" -> null
+
+      - access_scope {
+          - namespaces = [
+              - "ironpass",
+            ] -> null
+          - type       = "namespace" -> null
+        }
+    }
+
+  # aws_iam_openid_connect_provider.github will be destroyed
+  - resource "aws_iam_openid_connect_provider" "github" {
+      - arn             = "arn:aws:iam::<account>:oidc-provider/token.actions.githubusercontent.com" -> null
+      - client_id_list  = [
+          - "sts.amazonaws.com",
+        ] -> null
+      - id              = "arn:aws:iam::<account>:oidc-provider/token.actions.githubusercontent.com" -> null
+      - tags            = {} -> null
+      - tags_all        = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - thumbprint_list = [
+          - "6938fd4d98bab03faadb97b34396831e3780aea1",
+          - "1c58a3a8518e8759bf075b76b750d4f2df264fcd",
+        ] -> null
+      - url             = "token.actions.githubusercontent.com" -> null
+    }
+
+  # aws_iam_role.github_deploy will be destroyed
+  - resource "aws_iam_role" "github_deploy" {
+      - arn                   = "arn:aws:iam::<account>:role/ironpass-github-deploy" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRoleWithWebIdentity"
+                      - Condition = {
+                          - StringEquals = {
+                              - "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
+                              - "token.actions.githubusercontent.com:sub" = "repo:brixdorf@180433577/ironpass-devops-capstone@1421043713:ref:refs/heads/main"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Federated = "arn:aws:iam::<account>:oidc-provider/token.actions.githubusercontent.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-10-15T17:20:27Z" -> null
+      - description           = "Assumed by GitHub Actions to deploy IronPass to EKS" -> null
+      - force_detach_policies = false -> null
+      - id                    = "ironpass-github-deploy" -> null
+      - managed_policy_arns   = [] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "ironpass-github-deploy" -> null
+      - path                  = "/" -> null
+      - tags                  = {} -> null
+      - tags_all              = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - unique_id             = "AROAVZE5EX4KTEO4UUATT" -> null
+        # (2 unchanged attributes hidden)
+
+      - inline_policy {
+          - name   = "describe-ironpass-cluster" -> null
+          - policy = jsonencode(
+                {
+                  - Statement = [
+                      - {
+                          - Action   = "eks:DescribeCluster"
+                          - Effect   = "Allow"
+                          - Resource = "arn:aws:eks:ap-south-1:<account>:cluster/ironpass-eks"
+                        },
+                    ]
+                  - Version   = "2012-10-17"
+                }
+            ) -> null
+        }
+    }
+
+  # aws_iam_role_policy.describe_cluster will be destroyed
+  - resource "aws_iam_role_policy" "describe_cluster" {
+      - id          = "ironpass-github-deploy:describe-ironpass-cluster" -> null
+      - name        = "describe-ironpass-cluster" -> null
+      - policy      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action   = "eks:DescribeCluster"
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:eks:ap-south-1:<account>:cluster/ironpass-eks"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - role        = "ironpass-github-deploy" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"] will be destroyed
+  - resource "aws_ec2_tag" "cluster_primary_security_group" {
+      - id          = "sg-0b291f90f72b2d6b2,Environment" -> null
+      - key         = "Environment" -> null
+      - region      = "ap-south-1" -> null
+      - resource_id = "sg-0b291f90f72b2d6b2" -> null
+      - value       = "dev" -> null
+    }
+
+  # module.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"] will be destroyed
+  - resource "aws_ec2_tag" "cluster_primary_security_group" {
+      - id          = "sg-0b291f90f72b2d6b2,ManagedBy" -> null
+      - key         = "ManagedBy" -> null
+      - region      = "ap-south-1" -> null
+      - resource_id = "sg-0b291f90f72b2d6b2" -> null
+      - value       = "terraform" -> null
+    }
+
+  # module.eks.aws_ec2_tag.cluster_primary_security_group["Project"] will be destroyed
+  - resource "aws_ec2_tag" "cluster_primary_security_group" {
+      - id          = "sg-0b291f90f72b2d6b2,Project" -> null
+      - key         = "Project" -> null
+      - region      = "ap-south-1" -> null
+      - resource_id = "sg-0b291f90f72b2d6b2" -> null
+      - value       = "ironpass" -> null
+    }
+
+  # module.eks.aws_eks_access_entry.this["cluster_creator"] will be destroyed
+  - resource "aws_eks_access_entry" "this" {
+      - access_entry_arn  = "arn:aws:eks:ap-south-1:<account>:access-entry/ironpass-eks/user/<account>/Romit-admin/76d0a04e-627d-1703-e5cc-a8be6cad49ac" -> null
+      - cluster_name      = "ironpass-eks" -> null
+      - created_at        = "2026-10-15T17:29:38Z" -> null
+      - id                = "ironpass-eks:arn:aws:iam::<account>:user/Romit-admin" -> null
+      - kubernetes_groups = [] -> null
+      - modified_at       = "2026-10-15T17:29:38Z" -> null
+      - principal_arn     = "arn:aws:iam::<account>:user/Romit-admin" -> null
+      - region            = "ap-south-1" -> null
+      - tags              = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all          = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - type              = "STANDARD" -> null
+      - user_name         = "arn:aws:iam::<account>:user/Romit-admin" -> null
+    }
+
+  # module.eks.aws_eks_access_policy_association.this["cluster_creator_admin"] will be destroyed
+  - resource "aws_eks_access_policy_association" "this" {
+      - associated_at = "2026-10-15 17:29:38.993 +0000 UTC" -> null
+      - cluster_name  = "ironpass-eks" -> null
+      - id            = "ironpass-eks#arn:aws:iam::<account>:user/Romit-admin#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy" -> null
+      - modified_at   = "2026-10-15 17:29:38.993 +0000 UTC" -> null
+      - policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy" -> null
+      - principal_arn = "arn:aws:iam::<account>:user/Romit-admin" -> null
+      - region        = "ap-south-1" -> null
+
+      - access_scope {
+          - namespaces = [] -> null
+          - type       = "cluster" -> null
+        }
+    }
+
+  # module.eks.aws_eks_addon.before_compute["vpc-cni"] will be destroyed
+  - resource "aws_eks_addon" "before_compute" {
+      - addon_name                  = "vpc-cni" -> null
+      - addon_version               = "v1.23.2-eksbuild.3" -> null
+      - arn                         = "arn:aws:eks:ap-south-1:<account>:addon/ironpass-eks/vpc-cni/58d0a04e-62e2-3768-1c08-6ca950d1a770" -> null
+      - cluster_name                = "ironpass-eks" -> null
+      - created_at                  = "2026-10-15T17:29:38Z" -> null
+      - id                          = "ironpass-eks:vpc-cni" -> null
+      - modified_at                 = "2026-10-15T17:29:55Z" -> null
+      - preserve                    = true -> null
+      - region                      = "ap-south-1" -> null
+      - resolve_conflicts_on_create = "NONE" -> null
+      - resolve_conflicts_on_update = "OVERWRITE" -> null
+      - tags                        = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                    = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - namespace_config {
+          - namespace = "kube-system" -> null
+        }
+
+      - timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["aws-ebs-csi-driver"] will be destroyed
+  - resource "aws_eks_addon" "this" {
+      - addon_name                  = "aws-ebs-csi-driver" -> null
+      - addon_version               = "v1.67.0-eksbuild.1" -> null
+      - arn                         = "arn:aws:eks:ap-south-1:<account>:addon/ironpass-eks/aws-ebs-csi-driver/6ed0a05b-8f4d-2c6c-b7a7-0c51a258a0f5" -> null
+      - cluster_name                = "ironpass-eks" -> null
+      - created_at                  = "2026-10-15T17:58:25Z" -> null
+      - id                          = "ironpass-eks:aws-ebs-csi-driver" -> null
+      - modified_at                 = "2026-10-15T17:59:01Z" -> null
+      - preserve                    = true -> null
+      - region                      = "ap-south-1" -> null
+      - resolve_conflicts_on_create = "NONE" -> null
+      - resolve_conflicts_on_update = "OVERWRITE" -> null
+      - tags                        = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                    = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - namespace_config {
+          - namespace = "kube-system" -> null
+        }
+
+      - timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["coredns"] will be destroyed
+  - resource "aws_eks_addon" "this" {
+      - addon_name                  = "coredns" -> null
+      - addon_version               = "v1.14.7-eksbuild.11" -> null
+      - arn                         = "arn:aws:eks:ap-south-1:<account>:addon/ironpass-eks/coredns/78d0a05b-8f4e-abee-8304-412961f0c57e" -> null
+      - cluster_name                = "ironpass-eks" -> null
+      - created_at                  = "2026-10-15T17:58:25Z" -> null
+      - id                          = "ironpass-eks:coredns" -> null
+      - modified_at                 = "2026-10-15T17:58:37Z" -> null
+      - preserve                    = true -> null
+      - region                      = "ap-south-1" -> null
+      - resolve_conflicts_on_create = "NONE" -> null
+      - resolve_conflicts_on_update = "OVERWRITE" -> null
+      - tags                        = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                    = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - namespace_config {
+          - namespace = "kube-system" -> null
+        }
+
+      - timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["kube-proxy"] will be destroyed
+  - resource "aws_eks_addon" "this" {
+      - addon_name                  = "kube-proxy" -> null
+      - addon_version               = "v1.35.3-eksbuild.52" -> null
+      - arn                         = "arn:aws:eks:ap-south-1:<account>:addon/ironpass-eks/kube-proxy/fad0a05b-8f51-38d6-330c-1428cc31e9c1" -> null
+      - cluster_name                = "ironpass-eks" -> null
+      - created_at                  = "2026-10-15T17:58:25Z" -> null
+      - id                          = "ironpass-eks:kube-proxy" -> null
+      - modified_at                 = "2026-10-16T05:32:49Z" -> null
+      - preserve                    = true -> null
+      - region                      = "ap-south-1" -> null
+      - resolve_conflicts_on_create = "NONE" -> null
+      - resolve_conflicts_on_update = "OVERWRITE" -> null
+      - tags                        = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                    = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - namespace_config {
+          - namespace = "kube-system" -> null
+        }
+
+      - timeouts {}
+    }
+
+  # module.eks.aws_eks_cluster.this[0] will be destroyed
+  - resource "aws_eks_cluster" "this" {
+      - arn                           = "arn:aws:eks:ap-south-1:<account>:cluster/ironpass-eks" -> null
+      - bootstrap_self_managed_addons = true -> null
+      - certificate_authority         = [
+          - {
+              - data = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURNVENDQWhtZ0F3SUJBZ0lRWGhRY21lOWxrRy9LZVR6TXhBMUk5VEFOQmdrcWhraUc5dzBCQVFzRkFEQW4KTVJBd0RnWURWUVFLRXdkQlYxTWdSVXRUTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1CNFhEVEkyTVRBeApOVEUzTWpFeE1Wb1hEVE14TVRBeE5ERTNNakV4TVZvd0p6RVFNQTRHQTFVRUNoTUhRVmRUSUVWTFV6RVRNQkVHCkExVUVBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUIKQVBBUG9vc0JqVmE3VlRldzdDNld4TnYyUi9WOGNNU04yWGlMOWtXWW1DSTArWFZYdk40N0VqWHhOWW5VRnVvNwpubjRzNFc0elY1VHZHbWwrZmRsaTlzNy96Q3QrSlhCVFJMSGt5QzdoeEpHZGM1QlpJSm5MaWE2M0xZZzVzeFdQCnBXZCtWKzFEZXY3S2xscFpxaktjOFhESzdLWSsyTk9IM0czajd0eUp2TitiTEJNMm5HL1hUK0s1bzNkb2xVVmcKckxvQXJPNEhzbEFZWWd2aDB5UGlScmFzbXFYTmU4aCtVY203ZVRpM3JLekFwaDIyelprY2s4WHZtTFBSRlRIVQpuUGZzME15bHpwTDNpVGhkU3NXR2NoV3dyWlZwQ3V1SzNTbXpmejhSUFVXeXZrSjJWaGJPcm1qYWYrRVU0Yzl1CmMwSzlVZTY5cW9kNzdCa1hiUlJXaGVzQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWQKRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZMclVma2VpTkpvc1NhUWFXMkVNaE93bENKQ0lNQlVHQTFVZApFUVFPTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRnJuNjdWRm0za1hsaDRSCm5lRkxleVFEUFFZbXB3aFFJWlVBNnBuNWlJL3dXRTVsQTVTM1NjUC9sc05HVUhlVWJlZWI0dnFtZGZQbWw5RFIKMSsvODZ4c09ubm41R1h3NjRSRDJPYTZWN3VTWHVQTGF4eUFzY3JnSUh4YnZHb0lmZ1pJMDhFRXdtb0RBTDByMwpaZDdDMWgrRUhKMnB2V2laVllSSWhBZ1ZEemZ6c2FMVExWN1l5eXdzZVlpWXBkdG9BS09Bd3JwNXJPQXI0elZuCng0MWJkai9Jd25obG94dWJtcnNPM0lsY0tPTHFNSGpUZjM2UDNORHFmOStRU0s3N1JUeXF0UTNha1RsRW0wMEYKS3ZmWTZ2UEphUlJGeVRhblhNaDJnakJpNmRwc3VPMTlEc0wzUFY5cENZQkJ1QldGY3pSc3ZhSzdnQURDTlQ2dApOdkdDSk93PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+            },
+        ] -> null
+      - created_at                    = "2026-10-15T17:20:54Z" -> null
+      - deletion_protection           = false -> null
+      - enabled_cluster_log_types     = [] -> null
+      - endpoint                      = "https://361736A4547EA5F9971FBA876DD939DC.gr7.ap-south-1.eks.amazonaws.com" -> null
+      - id                            = "ironpass-eks" -> null
+      - identity                      = [
+          - {
+              - oidc = [
+                  - {
+                      - issuer = "https://oidc.eks.ap-south-1.amazonaws.com/id/361736A4547EA5F9971FBA876DD939DC"
+                    },
+                ]
+            },
+        ] -> null
+      - name                          = "ironpass-eks" -> null
+      - platform_version              = "eks.24" -> null
+      - region                        = "ap-south-1" -> null
+      - role_arn                      = "arn:aws:iam::<account>:role/ironpass-eks-cluster-20261015172019579000000001" -> null
+      - status                        = "ACTIVE" -> null
+      - tags                          = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                      = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - version                       = "1.35" -> null
+
+      - access_config {
+          - authentication_mode                         = "API_AND_CONFIG_MAP" -> null
+          - bootstrap_cluster_creator_admin_permissions = false -> null
+        }
+
+      - control_plane_scaling_config {
+          - tier = "standard" -> null
+        }
+
+      - kube_api_server_config {
+          - event_ttl = "60m" -> null
+
+          - service_node_port_range {
+              - max_port = 32767 -> null
+              - min_port = 30000 -> null
+            }
+        }
+
+      - kube_controller_manager_config {
+          - horizontal_pod_autoscaler_controller_config {
+              - horizontal_pod_autoscaler_sync_period = "15s" -> null
+            }
+          - pod_gc_controller_config {
+              - terminated_pod_gc_threshold = 12500 -> null
+            }
+        }
+
+      - kube_scheduler_config {
+          - node_resources_fit {
+              - scoring_strategy {
+                  - type = "LeastAllocated" -> null
+
+                  - resource {
+                      - name   = "cpu" -> null
+                      - weight = 1 -> null
+                    }
+                  - resource {
+                      - name   = "memory" -> null
+                      - weight = 1 -> null
+                    }
+                }
+            }
+        }
+
+      - kubernetes_network_config {
+          - ip_family         = "ipv4" -> null
+          - service_ipv4_cidr = "172.20.0.0/16" -> null
+            # (1 unchanged attribute hidden)
+
+          - elastic_load_balancing {
+              - enabled = false -> null
+            }
+        }
+
+      - upgrade_policy {
+          - support_type = "EXTENDED" -> null
+        }
+
+      - vpc_config {
+          - cluster_security_group_id = "sg-0b291f90f72b2d6b2" -> null
+          - control_plane_egress_mode = "AWS_MANAGED" -> null
+          - endpoint_private_access   = true -> null
+          - endpoint_public_access    = true -> null
+          - public_access_cidrs       = [
+              - "0.0.0.0/0",
+            ] -> null
+          - security_group_ids        = [
+              - "sg-0ba4a511054f06b80",
+            ] -> null
+          - subnet_ids                = [
+              - "subnet-053bbf0432f16fbab",
+              - "subnet-0774c9cd79694ae2b",
+            ] -> null
+          - vpc_id                    = "vpc-03b814005d788cfd4" -> null
+        }
+    }
+
+  # module.eks.aws_iam_openid_connect_provider.oidc_provider[0] will be destroyed
+  - resource "aws_iam_openid_connect_provider" "oidc_provider" {
+      - arn             = "arn:aws:iam::<account>:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/361736A4547EA5F9971FBA876DD939DC" -> null
+      - client_id_list  = [
+          - "sts.amazonaws.com",
+        ] -> null
+      - id              = "arn:aws:iam::<account>:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/361736A4547EA5F9971FBA876DD939DC" -> null
+      - tags            = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-eks-eks-irsa"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all        = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-eks-eks-irsa"
+          - "Project"     = "ironpass"
+        } -> null
+      - thumbprint_list = [
+          - "06b25927c42a721631c1efd9431e648fa62e1e39",
+        ] -> null
+      - url             = "oidc.eks.ap-south-1.amazonaws.com/id/361736A4547EA5F9971FBA876DD939DC" -> null
+    }
+
+  # module.eks.aws_iam_role.this[0] will be destroyed
+  - resource "aws_iam_role" "this" {
+      - arn                   = "arn:aws:iam::<account>:role/ironpass-eks-cluster-20261015172019579000000001" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = [
+                          - "sts:TagSession",
+                          - "sts:AssumeRole",
+                        ]
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "eks.amazonaws.com"
+                        }
+                      - Sid       = "EKSClusterAssumeRole"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-10-15T17:20:24Z" -> null
+      - force_detach_policies = true -> null
+      - id                    = "ironpass-eks-cluster-20261015172019579000000001" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "ironpass-eks-cluster-20261015172019579000000001" -> null
+      - name_prefix           = "ironpass-eks-cluster-" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all              = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - unique_id             = "AROAVZE5EX4KQWHH2DF4P" -> null
+        # (2 unchanged attributes hidden)
+    }
+
+  # module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "this" {
+      - id         = "ironpass-eks-cluster-20261015172019579000000001-20261015172028363100000009" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy" -> null
+      - role       = "ironpass-eks-cluster-20261015172019579000000001" -> null
+    }
+
+  # module.eks.aws_security_group.cluster[0] will be destroyed
+  - resource "aws_security_group" "cluster" {
+      - arn                    = "arn:aws:ec2:ap-south-1:<account>:security-group/sg-0ba4a511054f06b80" -> null
+      - description            = "EKS cluster security group" -> null
+      - egress                 = [] -> null
+      - id                     = "sg-0ba4a511054f06b80" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = []
+              - description      = "Node groups to cluster API"
+              - from_port        = 443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-00cbfb97e15e1765c",
+                ]
+              - self             = false
+              - to_port          = 443
+            },
+        ] -> null
+      - name                   = "ironpass-eks-cluster-2026101517203946470000000e" -> null
+      - name_prefix            = "ironpass-eks-cluster-" -> null
+      - owner_id               = "<account>" -> null
+      - region                 = "ap-south-1" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-eks-cluster"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-eks-cluster"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id                 = "vpc-03b814005d788cfd4" -> null
+    }
+
+  # module.eks.aws_security_group.node[0] will be destroyed
+  - resource "aws_security_group" "node" {
+      - arn                    = "arn:aws:ec2:ap-south-1:<account>:security-group/sg-00cbfb97e15e1765c" -> null
+      - description            = "EKS node shared security group" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "Allow all egress"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-00cbfb97e15e1765c" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = []
+              - description      = "Cluster API to node 10251/tcp webhook"
+              - from_port        = 10251
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0ba4a511054f06b80",
+                ]
+              - self             = false
+              - to_port          = 10251
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Cluster API to node 4443/tcp webhook"
+              - from_port        = 4443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0ba4a511054f06b80",
+                ]
+              - self             = false
+              - to_port          = 4443
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Cluster API to node 6443/tcp webhook"
+              - from_port        = 6443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0ba4a511054f06b80",
+                ]
+              - self             = false
+              - to_port          = 6443
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Cluster API to node 8443/tcp webhook"
+              - from_port        = 8443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0ba4a511054f06b80",
+                ]
+              - self             = false
+              - to_port          = 8443
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Cluster API to node 9443/tcp webhook"
+              - from_port        = 9443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0ba4a511054f06b80",
+                ]
+              - self             = false
+              - to_port          = 9443
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Cluster API to node groups"
+              - from_port        = 443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0ba4a511054f06b80",
+                ]
+              - self             = false
+              - to_port          = 443
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Cluster API to node kubelets"
+              - from_port        = 10250
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0ba4a511054f06b80",
+                ]
+              - self             = false
+              - to_port          = 10250
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Node to node CoreDNS UDP"
+              - from_port        = 53
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "udp"
+              - security_groups  = []
+              - self             = true
+              - to_port          = 53
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Node to node CoreDNS"
+              - from_port        = 53
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = true
+              - to_port          = 53
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "Node to node ingress on ephemeral ports"
+              - from_port        = 1025
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = true
+              - to_port          = 65535
+            },
+        ] -> null
+      - name                   = "ironpass-eks-node-2026101517203647410000000c" -> null
+      - name_prefix            = "ironpass-eks-node-" -> null
+      - owner_id               = "<account>" -> null
+      - region                 = "ap-south-1" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment"                        = "dev"
+          - "ManagedBy"                          = "terraform"
+          - "Name"                               = "ironpass-eks-node"
+          - "Project"                            = "ironpass"
+          - "kubernetes.io/cluster/ironpass-eks" = "owned"
+        } -> null
+      - tags_all               = {
+          - "Environment"                        = "dev"
+          - "ManagedBy"                          = "terraform"
+          - "Name"                               = "ironpass-eks-node"
+          - "Project"                            = "ironpass"
+          - "kubernetes.io/cluster/ironpass-eks" = "owned"
+        } -> null
+      - vpc_id                 = "vpc-03b814005d788cfd4" -> null
+    }
+
+  # module.eks.aws_security_group_rule.cluster["ingress_nodes_443"] will be destroyed
+  - resource "aws_security_group_rule" "cluster" {
+      - description              = "Node groups to cluster API" -> null
+      - from_port                = 443 -> null
+      - id                       = "sgrule-2835326372" -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-0ba4a511054f06b80" -> null
+      - security_group_rule_id   = "sgr-0acf7aeadd004c5d9" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-00cbfb97e15e1765c" -> null
+      - to_port                  = 443 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["egress_all"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - cidr_blocks            = [
+          - "0.0.0.0/0",
+        ] -> null
+      - description            = "Allow all egress" -> null
+      - from_port              = 0 -> null
+      - id                     = "sgrule-1745609321" -> null
+      - prefix_list_ids        = [] -> null
+      - protocol               = "-1" -> null
+      - region                 = "ap-south-1" -> null
+      - security_group_id      = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id = "sgr-0c839110b8a4706e6" -> null
+      - self                   = false -> null
+      - to_port                = 0 -> null
+      - type                   = "egress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description              = "Cluster API to node 10251/tcp webhook" -> null
+      - from_port                = 10251 -> null
+      - id                       = "sgrule-369535960" -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id   = "sgr-025b17001ab42ad4a" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-0ba4a511054f06b80" -> null
+      - to_port                  = 10251 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_443"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description              = "Cluster API to node groups" -> null
+      - from_port                = 443 -> null
+      - id                       = "sgrule-1806581511" -> null
+      - prefix_list_ids          = [] -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id   = "sgr-0a6d709b1e21535c9" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-0ba4a511054f06b80" -> null
+      - to_port                  = 443 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description              = "Cluster API to node 4443/tcp webhook" -> null
+      - from_port                = 4443 -> null
+      - id                       = "sgrule-2217897772" -> null
+      - prefix_list_ids          = [] -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id   = "sgr-00ccbc30a52034851" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-0ba4a511054f06b80" -> null
+      - to_port                  = 4443 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description              = "Cluster API to node 6443/tcp webhook" -> null
+      - from_port                = 6443 -> null
+      - id                       = "sgrule-1299187898" -> null
+      - prefix_list_ids          = [] -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id   = "sgr-06112408b3e628234" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-0ba4a511054f06b80" -> null
+      - to_port                  = 6443 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description              = "Cluster API to node 8443/tcp webhook" -> null
+      - from_port                = 8443 -> null
+      - id                       = "sgrule-1579955355" -> null
+      - prefix_list_ids          = [] -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id   = "sgr-034787ce6c9eab775" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-0ba4a511054f06b80" -> null
+      - to_port                  = 8443 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description              = "Cluster API to node 9443/tcp webhook" -> null
+      - from_port                = 9443 -> null
+      - id                       = "sgrule-982320976" -> null
+      - prefix_list_ids          = [] -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id   = "sgr-03462d1d4acb7eff1" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-0ba4a511054f06b80" -> null
+      - to_port                  = 9443 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description              = "Cluster API to node kubelets" -> null
+      - from_port                = 10250 -> null
+      - id                       = "sgrule-575667107" -> null
+      - prefix_list_ids          = [] -> null
+      - protocol                 = "tcp" -> null
+      - region                   = "ap-south-1" -> null
+      - security_group_id        = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id   = "sgr-00745f46ca69f7953" -> null
+      - self                     = false -> null
+      - source_security_group_id = "sg-0ba4a511054f06b80" -> null
+      - to_port                  = 10250 -> null
+      - type                     = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description            = "Node to node ingress on ephemeral ports" -> null
+      - from_port              = 1025 -> null
+      - id                     = "sgrule-138459813" -> null
+      - prefix_list_ids        = [] -> null
+      - protocol               = "tcp" -> null
+      - region                 = "ap-south-1" -> null
+      - security_group_id      = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id = "sgr-0e4990412397783bb" -> null
+      - self                   = true -> null
+      - to_port                = 65535 -> null
+      - type                   = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description            = "Node to node CoreDNS" -> null
+      - from_port              = 53 -> null
+      - id                     = "sgrule-3432970958" -> null
+      - prefix_list_ids        = [] -> null
+      - protocol               = "tcp" -> null
+      - region                 = "ap-south-1" -> null
+      - security_group_id      = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id = "sgr-0811b31c25be76298" -> null
+      - self                   = true -> null
+      - to_port                = 53 -> null
+      - type                   = "ingress" -> null
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"] will be destroyed
+  - resource "aws_security_group_rule" "node" {
+      - description            = "Node to node CoreDNS UDP" -> null
+      - from_port              = 53 -> null
+      - id                     = "sgrule-1757501729" -> null
+      - prefix_list_ids        = [] -> null
+      - protocol               = "udp" -> null
+      - region                 = "ap-south-1" -> null
+      - security_group_id      = "sg-00cbfb97e15e1765c" -> null
+      - security_group_rule_id = "sgr-05510334590f2db50" -> null
+      - self                   = true -> null
+      - to_port                = 53 -> null
+      - type                   = "ingress" -> null
+    }
+
+  # module.eks.time_sleep.this[0] will be destroyed
+  - resource "time_sleep" "this" {
+      - create_duration = "30s" -> null
+      - id              = "2026-10-16T05:32:37Z" -> null
+      - triggers        = {
+          - "certificate_authority_data" = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURNVENDQWhtZ0F3SUJBZ0lRWGhRY21lOWxrRy9LZVR6TXhBMUk5VEFOQmdrcWhraUc5dzBCQVFzRkFEQW4KTVJBd0RnWURWUVFLRXdkQlYxTWdSVXRUTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1CNFhEVEkyTVRBeApOVEUzTWpFeE1Wb1hEVE14TVRBeE5ERTNNakV4TVZvd0p6RVFNQTRHQTFVRUNoTUhRVmRUSUVWTFV6RVRNQkVHCkExVUVBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUIKQVBBUG9vc0JqVmE3VlRldzdDNld4TnYyUi9WOGNNU04yWGlMOWtXWW1DSTArWFZYdk40N0VqWHhOWW5VRnVvNwpubjRzNFc0elY1VHZHbWwrZmRsaTlzNy96Q3QrSlhCVFJMSGt5QzdoeEpHZGM1QlpJSm5MaWE2M0xZZzVzeFdQCnBXZCtWKzFEZXY3S2xscFpxaktjOFhESzdLWSsyTk9IM0czajd0eUp2TitiTEJNMm5HL1hUK0s1bzNkb2xVVmcKckxvQXJPNEhzbEFZWWd2aDB5UGlScmFzbXFYTmU4aCtVY203ZVRpM3JLekFwaDIyelprY2s4WHZtTFBSRlRIVQpuUGZzME15bHpwTDNpVGhkU3NXR2NoV3dyWlZwQ3V1SzNTbXpmejhSUFVXeXZrSjJWaGJPcm1qYWYrRVU0Yzl1CmMwSzlVZTY5cW9kNzdCa1hiUlJXaGVzQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWQKRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZMclVma2VpTkpvc1NhUWFXMkVNaE93bENKQ0lNQlVHQTFVZApFUVFPTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRnJuNjdWRm0za1hsaDRSCm5lRkxleVFEUFFZbXB3aFFJWlVBNnBuNWlJL3dXRTVsQTVTM1NjUC9sc05HVUhlVWJlZWI0dnFtZGZQbWw5RFIKMSsvODZ4c09ubm41R1h3NjRSRDJPYTZWN3VTWHVQTGF4eUFzY3JnSUh4YnZHb0lmZ1pJMDhFRXdtb0RBTDByMwpaZDdDMWgrRUhKMnB2V2laVllSSWhBZ1ZEemZ6c2FMVExWN1l5eXdzZVlpWXBkdG9BS09Bd3JwNXJPQXI0elZuCng0MWJkai9Jd25obG94dWJtcnNPM0lsY0tPTHFNSGpUZjM2UDNORHFmOStRU0s3N1JUeXF0UTNha1RsRW0wMEYKS3ZmWTZ2UEphUlJGeVRhblhNaDJnakJpNmRwc3VPMTlEc0wzUFY5cENZQkJ1QldGY3pSc3ZhSzdnQURDTlQ2dApOdkdDSk93PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+          - "endpoint"                   = "https://361736A4547EA5F9971FBA876DD939DC.gr7.ap-south-1.eks.amazonaws.com"
+          - "kubernetes_version"         = "1.35"
+          - "name"                       = "ironpass-eks"
+          - "service_cidr"               = "172.20.0.0/16"
+        } -> null
+    }
+
+  # module.vpc.aws_default_network_acl.this[0] will be destroyed
+  - resource "aws_default_network_acl" "this" {
+      - arn                    = "arn:aws:ec2:ap-south-1:<account>:network-acl/acl-0eaf70c84690b1f8b" -> null
+      - default_network_acl_id = "acl-0eaf70c84690b1f8b" -> null
+      - id                     = "acl-0eaf70c84690b1f8b" -> null
+      - owner_id               = "<account>" -> null
+      - region                 = "ap-south-1" -> null
+      - subnet_ids             = [
+          - "subnet-053bbf0432f16fbab",
+          - "subnet-0774c9cd79694ae2b",
+          - "subnet-0f96bde32d5b6efa9",
+          - "subnet-0fe5630827f0018fd",
+        ] -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-default"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-default"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id                 = "vpc-03b814005d788cfd4" -> null
+
+      - egress {
+          - action          = "allow" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - ipv6_cidr_block = "::/0" -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 101 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+      - egress {
+          - action          = "allow" -> null
+          - cidr_block      = "0.0.0.0/0" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 100 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - ingress {
+          - action          = "allow" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - ipv6_cidr_block = "::/0" -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 101 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+      - ingress {
+          - action          = "allow" -> null
+          - cidr_block      = "0.0.0.0/0" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 100 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.vpc.aws_default_route_table.default[0] will be destroyed
+  - resource "aws_default_route_table" "default" {
+      - arn                    = "arn:aws:ec2:ap-south-1:<account>:route-table/rtb-0b4c9de44f14311a5" -> null
+      - default_route_table_id = "rtb-0b4c9de44f14311a5" -> null
+      - id                     = "rtb-0b4c9de44f14311a5" -> null
+      - owner_id               = "<account>" -> null
+      - propagating_vgws       = [] -> null
+      - region                 = "ap-south-1" -> null
+      - route                  = [] -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-default"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-default"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id                 = "vpc-03b814005d788cfd4" -> null
+
+      - timeouts {
+          - create = "5m" -> null
+          - update = "5m" -> null
+        }
+    }
+
+  # module.vpc.aws_default_security_group.this[0] will be destroyed
+  - resource "aws_default_security_group" "this" {
+      - arn                    = "arn:aws:ec2:ap-south-1:<account>:security-group/sg-0aaa1c6a5080880d6" -> null
+      - description            = "default VPC security group" -> null
+      - egress                 = [] -> null
+      - id                     = "sg-0aaa1c6a5080880d6" -> null
+      - ingress                = [] -> null
+      - name                   = "default" -> null
+      - owner_id               = "<account>" -> null
+      - region                 = "ap-south-1" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-default"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-default"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id                 = "vpc-03b814005d788cfd4" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_eip.nat[0] will be destroyed
+  - resource "aws_eip" "nat" {
+      - allocation_id            = "eipalloc-09974a31a5cd1ddc9" -> null
+      - arn                      = "arn:aws:ec2:ap-south-1:<account>:elastic-ip/eipalloc-09974a31a5cd1ddc9" -> null
+      - association_id           = "eipassoc-008086a2eeab458c4" -> null
+      - domain                   = "vpc" -> null
+      - id                       = "eipalloc-09974a31a5cd1ddc9" -> null
+      - network_border_group     = "ap-south-1" -> null
+      - network_interface        = "eni-075ededb7fed5e28e" -> null
+      - private_dns              = "ip-10-20-101-33.ap-south-1.compute.internal" -> null
+      - private_ip               = "10.20.101.33" -> null
+      - public_dns               = "ec2-13-126-155-169.ap-south-1.compute.amazonaws.com" -> null
+      - public_ip                = "13.126.155.169" -> null
+      - public_ipv4_pool         = "amazon" -> null
+      - region                   = "ap-south-1" -> null
+      - tags                     = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-ap-south-1a"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-ap-south-1a"
+          - "Project"     = "ironpass"
+        } -> null
+        # (6 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be destroyed
+  - resource "aws_internet_gateway" "this" {
+      - arn      = "arn:aws:ec2:ap-south-1:<account>:internet-gateway/igw-06b5816ec763261f8" -> null
+      - id       = "igw-06b5816ec763261f8" -> null
+      - owner_id = "<account>" -> null
+      - region   = "ap-south-1" -> null
+      - tags     = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id   = "vpc-03b814005d788cfd4" -> null
+    }
+
+  # module.vpc.aws_nat_gateway.this[0] will be destroyed
+  - resource "aws_nat_gateway" "this" {
+      - allocation_id                      = "eipalloc-09974a31a5cd1ddc9" -> null
+      - association_id                     = "eipassoc-008086a2eeab458c4" -> null
+      - availability_mode                  = "zonal" -> null
+      - connectivity_type                  = "public" -> null
+      - id                                 = "nat-082d85114599ff48e" -> null
+      - network_interface_id               = "eni-075ededb7fed5e28e" -> null
+      - private_ip                         = "10.20.101.33" -> null
+      - public_ip                          = "13.126.155.169" -> null
+      - region                             = "ap-south-1" -> null
+      - regional_nat_gateway_address       = [] -> null
+      - secondary_allocation_ids           = [] -> null
+      - secondary_private_ip_address_count = 0 -> null
+      - secondary_private_ip_addresses     = [] -> null
+      - subnet_id                          = "subnet-0fe5630827f0018fd" -> null
+      - tags                               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-ap-south-1a"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-ap-south-1a"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id                             = "vpc-03b814005d788cfd4" -> null
+    }
+
+  # module.vpc.aws_route.private_nat_gateway[0] will be destroyed
+  - resource "aws_route" "private_nat_gateway" {
+      - destination_cidr_block      = "0.0.0.0/0" -> null
+      - id                          = "r-rtb-05733fa27bc4262bf1080289494" -> null
+      - nat_gateway_id              = "nat-082d85114599ff48e" -> null
+      - origin                      = "CreateRoute" -> null
+      - region                      = "ap-south-1" -> null
+      - route_table_id              = "rtb-05733fa27bc4262bf" -> null
+      - state                       = "active" -> null
+        # (14 unchanged attributes hidden)
+
+      - timeouts {
+          - create = "5m" -> null
+        }
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be destroyed
+  - resource "aws_route" "public_internet_gateway" {
+      - destination_cidr_block      = "0.0.0.0/0" -> null
+      - gateway_id                  = "igw-06b5816ec763261f8" -> null
+      - id                          = "r-rtb-0d5504f22bdbe210b1080289494" -> null
+      - origin                      = "CreateRoute" -> null
+      - region                      = "ap-south-1" -> null
+      - route_table_id              = "rtb-0d5504f22bdbe210b" -> null
+      - state                       = "active" -> null
+        # (14 unchanged attributes hidden)
+
+      - timeouts {
+          - create = "5m" -> null
+        }
+    }
+
+  # module.vpc.aws_route_table.private[0] will be destroyed
+  - resource "aws_route_table" "private" {
+      - arn              = "arn:aws:ec2:ap-south-1:<account>:route-table/rtb-05733fa27bc4262bf" -> null
+      - id               = "rtb-05733fa27bc4262bf" -> null
+      - owner_id         = "<account>" -> null
+      - propagating_vgws = [] -> null
+      - region           = "ap-south-1" -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - nat_gateway_id             = "nat-082d85114599ff48e"
+                # (12 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-private"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-private"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id           = "vpc-03b814005d788cfd4" -> null
+    }
+
+  # module.vpc.aws_route_table.public[0] will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:ap-south-1:<account>:route-table/rtb-0d5504f22bdbe210b" -> null
+      - id               = "rtb-0d5504f22bdbe210b" -> null
+      - owner_id         = "<account>" -> null
+      - propagating_vgws = [] -> null
+      - region           = "ap-south-1" -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-06b5816ec763261f8"
+                # (12 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-public"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc-public"
+          - "Project"     = "ironpass"
+        } -> null
+      - vpc_id           = "vpc-03b814005d788cfd4" -> null
+    }
+
+  # module.vpc.aws_route_table_association.private[0] will be destroyed
+  - resource "aws_route_table_association" "private" {
+      - id             = "rtbassoc-03098140d157c4098" -> null
+      - region         = "ap-south-1" -> null
+      - route_table_id = "rtb-05733fa27bc4262bf" -> null
+      - subnet_id      = "subnet-053bbf0432f16fbab" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_route_table_association.private[1] will be destroyed
+  - resource "aws_route_table_association" "private" {
+      - id             = "rtbassoc-07c8af0dc54788ef1" -> null
+      - region         = "ap-south-1" -> null
+      - route_table_id = "rtb-05733fa27bc4262bf" -> null
+      - subnet_id      = "subnet-0774c9cd79694ae2b" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-0480b339ce49b3c21" -> null
+      - region         = "ap-south-1" -> null
+      - route_table_id = "rtb-0d5504f22bdbe210b" -> null
+      - subnet_id      = "subnet-0fe5630827f0018fd" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_route_table_association.public[1] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-08123a27f52c28f51" -> null
+      - region         = "ap-south-1" -> null
+      - route_table_id = "rtb-0d5504f22bdbe210b" -> null
+      - subnet_id      = "subnet-0f96bde32d5b6efa9" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_subnet.private[0] will be destroyed
+  - resource "aws_subnet" "private" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:<account>:subnet/subnet-053bbf0432f16fbab" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1a" -> null
+      - availability_zone_id                           = "aps1-az1" -> null
+      - cidr_block                                     = "10.20.1.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-053bbf0432f16fbab" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "<account>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "ap-south-1" -> null
+      - tags                                           = {
+          - "Environment"                     = "dev"
+          - "ManagedBy"                       = "terraform"
+          - "Name"                            = "ironpass-vpc-private-ap-south-1a"
+          - "Project"                         = "ironpass"
+          - "kubernetes.io/role/internal-elb" = "1"
+        } -> null
+      - tags_all                                       = {
+          - "Environment"                     = "dev"
+          - "ManagedBy"                       = "terraform"
+          - "Name"                            = "ironpass-vpc-private-ap-south-1a"
+          - "Project"                         = "ironpass"
+          - "kubernetes.io/role/internal-elb" = "1"
+        } -> null
+      - vpc_id                                         = "vpc-03b814005d788cfd4" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_subnet.private[1] will be destroyed
+  - resource "aws_subnet" "private" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:<account>:subnet/subnet-0774c9cd79694ae2b" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1b" -> null
+      - availability_zone_id                           = "aps1-az3" -> null
+      - cidr_block                                     = "10.20.2.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0774c9cd79694ae2b" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "<account>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "ap-south-1" -> null
+      - tags                                           = {
+          - "Environment"                     = "dev"
+          - "ManagedBy"                       = "terraform"
+          - "Name"                            = "ironpass-vpc-private-ap-south-1b"
+          - "Project"                         = "ironpass"
+          - "kubernetes.io/role/internal-elb" = "1"
+        } -> null
+      - tags_all                                       = {
+          - "Environment"                     = "dev"
+          - "ManagedBy"                       = "terraform"
+          - "Name"                            = "ironpass-vpc-private-ap-south-1b"
+          - "Project"                         = "ironpass"
+          - "kubernetes.io/role/internal-elb" = "1"
+        } -> null
+      - vpc_id                                         = "vpc-03b814005d788cfd4" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:<account>:subnet/subnet-0fe5630827f0018fd" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1a" -> null
+      - availability_zone_id                           = "aps1-az1" -> null
+      - cidr_block                                     = "10.20.101.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0fe5630827f0018fd" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "<account>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "ap-south-1" -> null
+      - tags                                           = {
+          - "Environment"            = "dev"
+          - "ManagedBy"              = "terraform"
+          - "Name"                   = "ironpass-vpc-public-ap-south-1a"
+          - "Project"                = "ironpass"
+          - "kubernetes.io/role/elb" = "1"
+        } -> null
+      - tags_all                                       = {
+          - "Environment"            = "dev"
+          - "ManagedBy"              = "terraform"
+          - "Name"                   = "ironpass-vpc-public-ap-south-1a"
+          - "Project"                = "ironpass"
+          - "kubernetes.io/role/elb" = "1"
+        } -> null
+      - vpc_id                                         = "vpc-03b814005d788cfd4" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_subnet.public[1] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:ap-south-1:<account>:subnet/subnet-0f96bde32d5b6efa9" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-south-1b" -> null
+      - availability_zone_id                           = "aps1-az3" -> null
+      - cidr_block                                     = "10.20.102.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0f96bde32d5b6efa9" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "<account>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "ap-south-1" -> null
+      - tags                                           = {
+          - "Environment"            = "dev"
+          - "ManagedBy"              = "terraform"
+          - "Name"                   = "ironpass-vpc-public-ap-south-1b"
+          - "Project"                = "ironpass"
+          - "kubernetes.io/role/elb" = "1"
+        } -> null
+      - tags_all                                       = {
+          - "Environment"            = "dev"
+          - "ManagedBy"              = "terraform"
+          - "Name"                   = "ironpass-vpc-public-ap-south-1b"
+          - "Project"                = "ironpass"
+          - "kubernetes.io/role/elb" = "1"
+        } -> null
+      - vpc_id                                         = "vpc-03b814005d788cfd4" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_vpc.this[0] will be destroyed
+  - resource "aws_vpc" "this" {
+      - arn                                  = "arn:aws:ec2:ap-south-1:<account>:vpc/vpc-03b814005d788cfd4" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.20.0.0/16" -> null
+      - default_network_acl_id               = "acl-0eaf70c84690b1f8b" -> null
+      - default_route_table_id               = "rtb-0b4c9de44f14311a5" -> null
+      - default_security_group_id            = "sg-0aaa1c6a5080880d6" -> null
+      - dhcp_options_id                      = "dopt-0af4dbd9bcb73952b" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-03b814005d788cfd4" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0b4c9de44f14311a5" -> null
+      - owner_id                             = "<account>" -> null
+      - region                               = "ap-south-1" -> null
+      - tags                                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "ironpass-vpc"
+          - "Project"     = "ironpass"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0] will be destroyed
+  - resource "aws_eks_node_group" "this" {
+      - ami_type               = "AL2023_x86_64_STANDARD" -> null
+      - arn                    = "arn:aws:eks:ap-south-1:<account>:nodegroup/ironpass-eks/main-20261015175705102700000001/36d0a05a-f3d1-500d-9f7a-77e5575a4831" -> null
+      - capacity_type          = "ON_DEMAND" -> null
+      - cluster_name           = "ironpass-eks" -> null
+      - disk_size              = 0 -> null
+      - id                     = "ironpass-eks:main-20261015175705102700000001" -> null
+      - instance_types         = [
+          - "c7i-flex.large",
+        ] -> null
+      - labels                 = {} -> null
+      - node_group_name        = "main-20261015175705102700000001" -> null
+      - node_group_name_prefix = "main-" -> null
+      - node_role_arn          = "arn:aws:iam::<account>:role/main-eks-node-group-20261015172019579100000002" -> null
+      - region                 = "ap-south-1" -> null
+      - release_version        = "1.35.8-20261012" -> null
+      - resources              = [
+          - {
+              - autoscaling_groups              = [
+                  - {
+                      - name = "eks-main-20261015175705102700000001-36d0a05a-f3d1-500d-9f7a-77e5575a4831"
+                    },
+                ]
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - status                 = "ACTIVE" -> null
+      - subnet_ids             = [
+          - "subnet-053bbf0432f16fbab",
+          - "subnet-0774c9cd79694ae2b",
+        ] -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "main"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Name"        = "main"
+          - "Project"     = "ironpass"
+        } -> null
+      - version                = "1.35" -> null
+
+      - launch_template {
+          - id      = "lt-08556231326861ee2" -> null
+          - name    = "main-20261015173008384000000011" -> null
+          - version = "1" -> null
+        }
+
+      - scaling_config {
+          - desired_size = 2 -> null
+          - max_size     = 3 -> null
+          - min_size     = 2 -> null
+        }
+
+      - timeouts {}
+
+      - update_config {
+          - max_unavailable            = 0 -> null
+          - max_unavailable_percentage = 33 -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].aws_iam_role.this[0] will be destroyed
+  - resource "aws_iam_role" "this" {
+      - arn                   = "arn:aws:iam::<account>:role/main-eks-node-group-20261015172019579100000002" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "ec2.amazonaws.com"
+                        }
+                      - Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-10-15T17:20:24Z" -> null
+      - description           = "EKS managed node group IAM role" -> null
+      - force_detach_policies = true -> null
+      - id                    = "main-eks-node-group-20261015172019579100000002" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+          - "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+          - "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+          - "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "main-eks-node-group-20261015172019579100000002" -> null
+      - name_prefix           = "main-eks-node-group-" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all              = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - unique_id             = "AROAVZE5EX4KWO5TKP7LH" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.additional["ebs_csi"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "additional" {
+      - id         = "main-eks-node-group-20261015172019579100000002-20261015172027966400000005" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy" -> null
+      - role       = "main-eks-node-group-20261015172019579100000002" -> null
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "this" {
+      - id         = "main-eks-node-group-20261015172019579100000002-20261015172028353000000008" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly" -> null
+      - role       = "main-eks-node-group-20261015172019579100000002" -> null
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "this" {
+      - id         = "main-eks-node-group-20261015172019579100000002-20261015172028052700000006" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy" -> null
+      - role       = "main-eks-node-group-20261015172019579100000002" -> null
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "this" {
+      - id         = "main-eks-node-group-20261015172019579100000002-20261015172027456900000004" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy" -> null
+      - role       = "main-eks-node-group-20261015172019579100000002" -> null
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].aws_launch_template.this[0] will be destroyed
+  - resource "aws_launch_template" "this" {
+      - arn                                  = "arn:aws:ec2:ap-south-1:<account>:launch-template/lt-08556231326861ee2" -> null
+      - default_version                      = 1 -> null
+      - description                          = "Custom launch template for main EKS managed node group" -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - id                                   = "lt-08556231326861ee2" -> null
+      - latest_version                       = 1 -> null
+      - name                                 = "main-20261015173008384000000011" -> null
+      - name_prefix                          = "main-" -> null
+      - region                               = "ap-south-1" -> null
+      - security_group_names                 = [] -> null
+      - tags                                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - tags_all                             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "terraform"
+          - "Project"     = "ironpass"
+        } -> null
+      - update_default_version               = true -> null
+      - vpc_security_group_ids               = [
+          - "sg-00cbfb97e15e1765c",
+        ] -> null
+        # (8 unchanged attributes hidden)
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - monitoring {
+          - enabled = true -> null
+        }
+
+      - tag_specifications {
+          - resource_type = "instance" -> null
+          - tags          = {
+              - "Environment" = "dev"
+              - "ManagedBy"   = "terraform"
+              - "Name"        = "main"
+              - "Project"     = "ironpass"
+            } -> null
+        }
+      - tag_specifications {
+          - resource_type = "network-interface" -> null
+          - tags          = {
+              - "Environment" = "dev"
+              - "ManagedBy"   = "terraform"
+              - "Name"        = "main"
+              - "Project"     = "ironpass"
+            } -> null
+        }
+      - tag_specifications {
+          - resource_type = "volume" -> null
+          - tags          = {
+              - "Environment" = "dev"
+              - "ManagedBy"   = "terraform"
+              - "Name"        = "main"
+              - "Project"     = "ironpass"
+            } -> null
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["main"].module.user_data.null_resource.validate_cluster_service_cidr will be destroyed
+  - resource "null_resource" "validate_cluster_service_cidr" {
+      - id = "7408303368796515503" -> null
+    }
+
+Plan: 0 to add, 0 to change, 60 to destroy.
+
+Changes to Outputs:
+  - cluster_endpoint       = "https://361736A4547EA5F9971FBA876DD939DC.gr7.ap-south-1.eks.amazonaws.com" -> null
+  - cluster_name           = "ironpass-eks" -> null
+  - configure_kubectl      = "aws eks update-kubeconfig --region ap-south-1 --name ironpass-eks" -> null
+  - github_deploy_role_arn = "arn:aws:iam::<account>:role/ironpass-github-deploy" -> null
+  - private_subnet_ids     = [
+      - "subnet-053bbf0432f16fbab",
+      - "subnet-0774c9cd79694ae2b",
+    ] -> null
+  - public_subnet_ids      = [
+      - "subnet-0fe5630827f0018fd",
+      - "subnet-0f96bde32d5b6efa9",
+    ] -> null
+  - region                 = "ap-south-1" -> null
+  - vpc_id                 = "vpc-03b814005d788cfd4" -> null
+module.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Destroying... [id=sg-0b291f90f72b2d6b2,Project]
+module.vpc.aws_default_security_group.this[0]: Destroying... [id=sg-0aaa1c6a5080880d6]
+module.eks.aws_eks_addon.this["kube-proxy"]: Destroying... [id=ironpass-eks:kube-proxy]
+module.vpc.aws_default_route_table.default[0]: Destroying... [id=rtb-0b4c9de44f14311a5]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Destroying... [id=ironpass-eks:aws-ebs-csi-driver]
+module.vpc.aws_route_table_association.public[1]: Destroying... [id=rtbassoc-08123a27f52c28f51]
+module.vpc.aws_route_table_association.public[0]: Destroying... [id=rtbassoc-0480b339ce49b3c21]
+module.vpc.aws_route_table_association.private[0]: Destroying... [id=rtbassoc-03098140d157c4098]
+module.vpc.aws_default_network_acl.this[0]: Destroying... [id=acl-0eaf70c84690b1f8b]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Destroying... [id=ironpass-eks:vpc-cni]
+module.vpc.aws_default_security_group.this[0]: Destruction complete after 0s
+module.vpc.aws_default_route_table.default[0]: Destruction complete after 0s
+aws_eks_access_policy_association.github_deploy: Destroying... [id=ironpass-eks#arn:aws:iam::<account>:role/ironpass-github-deploy#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+module.vpc.aws_default_network_acl.this[0]: Destruction complete after 0s
+module.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Destroying... [id=sg-0b291f90f72b2d6b2,ManagedBy]
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Destroying... [id=arn:aws:iam::<account>:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/361736A4547EA5F9971FBA876DD939DC]
+module.eks.aws_ec2_tag.cluster_primary_security_group["ManagedBy"]: Destruction complete after 1s
+module.eks.aws_ec2_tag.cluster_primary_security_group["Project"]: Destruction complete after 1s
+module.vpc.aws_route.private_nat_gateway[0]: Destroying... [id=r-rtb-05733fa27bc4262bf1080289494]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Destroying... [id=sg-0b291f90f72b2d6b2,Environment]
+aws_eks_access_policy_association.github_deploy: Destruction complete after 1s
+module.vpc.aws_route_table_association.private[1]: Destroying... [id=rtbassoc-07c8af0dc54788ef1]
+module.vpc.aws_route_table_association.public[1]: Destruction complete after 1s
+aws_iam_role_policy.describe_cluster: Destroying... [id=ironpass-github-deploy:describe-ironpass-cluster]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Destruction complete after 0s
+module.vpc.aws_route.public_internet_gateway[0]: Destroying... [id=r-rtb-0d5504f22bdbe210b1080289494]
+module.vpc.aws_route_table_association.public[0]: Destruction complete after 2s
+module.vpc.aws_route_table_association.private[0]: Destruction complete after 2s
+aws_eks_access_entry.github_deploy: Destroying... [id=ironpass-eks:arn:aws:iam::<account>:role/ironpass-github-deploy]
+module.eks.aws_eks_addon.this["coredns"]: Destroying... [id=ironpass-eks:coredns]
+module.eks.aws_eks_addon.this["kube-proxy"]: Destruction complete after 2s
+module.vpc.aws_route.private_nat_gateway[0]: Destruction complete after 1s
+module.vpc.aws_route_table_association.private[1]: Destruction complete after 1s
+module.vpc.aws_nat_gateway.this[0]: Destroying... [id=nat-082d85114599ff48e]
+module.vpc.aws_route_table.private[0]: Destroying... [id=rtb-05733fa27bc4262bf]
+module.vpc.aws_route.public_internet_gateway[0]: Destruction complete after 1s
+module.vpc.aws_route_table.public[0]: Destroying... [id=rtb-0d5504f22bdbe210b]
+aws_eks_access_entry.github_deploy: Destruction complete after 0s
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Destruction complete after 2s
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Destruction complete after 3s
+module.vpc.aws_route_table.public[0]: Destruction complete after 1s
+module.vpc.aws_route_table.private[0]: Destruction complete after 1s
+aws_iam_role_policy.describe_cluster: Destruction complete after 2s
+module.eks.aws_eks_access_policy_association.this["cluster_creator_admin"]: Destroying... [id=ironpass-eks#arn:aws:iam::<account>:user/Romit-admin#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+aws_iam_role.github_deploy: Destroying... [id=ironpass-github-deploy]
+module.eks.aws_eks_access_policy_association.this["cluster_creator_admin"]: Destruction complete after 0s
+module.eks.aws_eks_access_entry.this["cluster_creator"]: Destroying... [id=ironpass-eks:arn:aws:iam::<account>:user/Romit-admin]
+module.eks.aws_eks_access_entry.this["cluster_creator"]: Destruction complete after 1s
+module.eks.aws_eks_addon.this["coredns"]: Destruction complete after 2s
+aws_iam_role.github_deploy: Destruction complete after 1s
+aws_iam_openid_connect_provider.github: Destroying... [id=arn:aws:iam::<account>:oidc-provider/token.actions.githubusercontent.com]
+aws_iam_openid_connect_provider.github: Destruction complete after 0s
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Destruction complete after 8s
+module.eks.module.eks_managed_node_group["main"].module.user_data.null_resource.validate_cluster_service_cidr: Destroying... [id=7408303368796515503]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Destroying... [id=ironpass-eks:main-20261015175705102700000001]
+module.eks.module.eks_managed_node_group["main"].module.user_data.null_resource.validate_cluster_service_cidr: Destruction complete after 0s
+module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-082d85114599ff48e, 00m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 00m10s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-082d85114599ff48e, 00m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 00m20s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-082d85114599ff48e, 00m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 00m30s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-082d85114599ff48e, 00m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 00m40s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-082d85114599ff48e, 00m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 00m50s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-082d85114599ff48e, 01m00s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Destruction complete after 1m0s
+module.vpc.aws_eip.nat[0]: Destroying... [id=eipalloc-09974a31a5cd1ddc9]
+module.vpc.aws_subnet.public[1]: Destroying... [id=subnet-0f96bde32d5b6efa9]
+module.vpc.aws_subnet.public[0]: Destroying... [id=subnet-0fe5630827f0018fd]
+module.vpc.aws_subnet.public[0]: Destruction complete after 4s
+module.vpc.aws_subnet.public[1]: Destruction complete after 4s
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 01m00s elapsed]
+module.vpc.aws_eip.nat[0]: Destruction complete after 9s
+module.vpc.aws_internet_gateway.this[0]: Destroying... [id=igw-06b5816ec763261f8]
+module.vpc.aws_internet_gateway.this[0]: Destruction complete after 0s
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 01m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 01m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 01m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 01m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 01m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 02m00s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 02m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 02m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 02m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 02m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 02m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 03m00s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 03m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 03m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 03m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 03m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 03m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 04m00s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 04m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 04m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 04m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 04m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 04m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 05m00s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 05m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 05m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 05m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 05m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 05m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 06m00s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 06m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 06m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 06m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 06m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 06m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 07m00s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 07m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 07m20s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 07m30s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 07m40s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 07m50s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 08m00s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Still destroying... [id=ironpass-eks:main-20261015175705102700000001, 08m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_eks_node_group.this[0]: Destruction complete after 8m17s
+module.eks.module.eks_managed_node_group["main"].aws_launch_template.this[0]: Destroying... [id=lt-08556231326861ee2]
+module.eks.module.eks_managed_node_group["main"].aws_launch_template.this[0]: Destruction complete after 5s
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172028353000000008]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.additional["ebs_csi"]: Destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172027966400000005]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172028052700000006]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172027456900000004]
+module.eks.time_sleep.this[0]: Destroying... [id=2026-10-16T05:32:37Z]
+module.eks.time_sleep.this[0]: Destruction complete after 0s
+module.eks.aws_eks_cluster.this[0]: Destroying... [id=ironpass-eks]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Still destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172028353000000008, 00m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.additional["ebs_csi"]: Still destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172027966400000005, 00m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Still destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172028052700000006, 00m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Still destroying... [id=main-eks-node-group-20261015172019579100000002-20261015172027456900000004, 00m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 00m10s elapsed]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Destruction complete after 10s
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.additional["ebs_csi"]: Destruction complete after 10s
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Destruction complete after 10s
+module.eks.module.eks_managed_node_group["main"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Destruction complete after 10s
+module.eks.module.eks_managed_node_group["main"].aws_iam_role.this[0]: Destroying... [id=main-eks-node-group-20261015172019579100000002]
+module.eks.module.eks_managed_node_group["main"].aws_iam_role.this[0]: Destruction complete after 2s
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 00m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 00m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 00m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 00m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 01m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 01m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 01m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 01m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 01m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 01m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 02m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 02m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 02m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 02m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 02m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still destroying... [id=ironpass-eks, 02m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Destruction complete after 2m51s
+module.vpc.aws_subnet.private[0]: Destroying... [id=subnet-053bbf0432f16fbab]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Destroying... [id=sgrule-1757501729]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Destroying... [id=sgrule-369535960]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Destroying... [id=ironpass-eks-cluster-20261015172019579000000001-20261015172028363100000009]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Destroying... [id=sgrule-3432970958]
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Destroying... [id=sgrule-575667107]
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Destroying... [id=sgrule-2835326372]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Destroying... [id=sgrule-1579955355]
+module.vpc.aws_subnet.private[1]: Destroying... [id=subnet-0774c9cd79694ae2b]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Destroying... [id=sgrule-982320976]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Destruction complete after 4s
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Destroying... [id=sgrule-1806581511]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Destruction complete after 7s
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Destroying... [id=sgrule-1299187898]
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Destruction complete after 7s
+module.eks.aws_security_group_rule.node["egress_all"]: Destroying... [id=sgrule-1745609321]
+module.vpc.aws_subnet.private[0]: Destruction complete after 7s
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Destroying... [id=sgrule-138459813]
+module.vpc.aws_subnet.private[1]: Destruction complete after 7s
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Destroying... [id=sgrule-2217897772]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Destruction complete after 7s
+module.eks.aws_iam_role.this[0]: Destroying... [id=ironpass-eks-cluster-20261015172019579000000001]
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Destruction complete after 8s
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Destruction complete after 9s
+module.eks.aws_iam_role.this[0]: Destruction complete after 1s
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Destruction complete after 9s
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Still destroying... [id=sgrule-982320976, 00m10s elapsed]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Destruction complete after 10s
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Destruction complete after 7s
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Destruction complete after 9s
+module.eks.aws_security_group_rule.node["egress_all"]: Destruction complete after 9s
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Still destroying... [id=sgrule-138459813, 00m10s elapsed]
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Destruction complete after 10s
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Still destroying... [id=sgrule-2217897772, 00m10s elapsed]
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Destruction complete after 11s
+module.eks.aws_security_group.cluster[0]: Destroying... [id=sg-0ba4a511054f06b80]
+module.eks.aws_security_group.node[0]: Destroying... [id=sg-00cbfb97e15e1765c]
+module.eks.aws_security_group.cluster[0]: Destruction complete after 1s
+module.eks.aws_security_group.node[0]: Destruction complete after 1s
+module.vpc.aws_vpc.this[0]: Destroying... [id=vpc-03b814005d788cfd4]
+module.vpc.aws_vpc.this[0]: Destruction complete after 4s
+
+Destroy complete! Resources: 60 destroyed.
