@@ -1,13 +1,14 @@
 # Terraform
 
-Creates the AWS side of IronPass in `ap-south-1`.
+Creates the AWS side of IronPass in `ap-south-1`. The availability zones are looked up with a data source, so changing `aws_region` works.
 
 | File | What it makes |
 | --- | --- |
-| `vpc.tf` | VPC, 2 public and 2 private subnets, one NAT gateway |
-| `eks.tf` | EKS cluster, managed node group, core add-ons and the EBS CSI driver |
-| `github_oidc.tf` | GitHub OIDC provider, a deploy role limited to the main branch, and an EKS access entry limited to the `ironpass` namespace |
+| `versions.tf` | Terraform and AWS provider versions |
+| `main.tf` | availability zone lookup, VPC (2 public and 2 private subnets, one NAT gateway), EKS cluster with a managed node group and add-ons, GitHub OIDC provider, deploy role and EKS access entry |
+| `variables.tf` | every input with a description and a default |
 | `outputs.tf` | cluster name, endpoint, subnet ids and the role ARN |
+| `terraform.tfvars.example` | sample values, copy it to `terraform.tfvars` |
 
 Every resource is tagged `Project=ironpass` and `ManagedBy=terraform`.
 
@@ -17,6 +18,8 @@ Every resource is tagged `Project=ironpass` and `ManagedBy=terraform`.
 cd terraform
 cp terraform.tfvars.example terraform.tfvars   # optional
 terraform init
+terraform fmt -check
+terraform validate
 terraform plan
 terraform apply
 aws eks update-kubeconfig --region ap-south-1 --name ironpass-eks

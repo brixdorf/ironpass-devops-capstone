@@ -7,7 +7,8 @@ environment        = "dev"
 cluster_name       = "ironpass-eks"
 kubernetes_version = "1.35"
 
-# t3.medium is the usual choice. Free plan accounts must use a free tier type.
+# t3.medium is the usual choice. A free plan account refuses it, so this project
+# uses c7i-flex.large (same 2 vCPU and 4 GiB).
 node_instance_type = "c7i-flex.large"
 node_desired_size  = 2
 node_min_size      = 2

@@ -1,19 +1,11 @@
 terraform {
-  required_version = ">= 1.7.0"
+  required_version = "~> 1.16"
 
   required_providers {
+    # The VPC module (>= 6.28) and the EKS module (>= 6.59) both need AWS provider 6.
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.95"
+      version = "~> 6.69"
     }
-  }
-}
-
-provider "aws" {
-  region = var.aws_region
-
-  # every resource that supports tags gets these automatically
-  default_tags {
-    tags = local.tags
   }
 }

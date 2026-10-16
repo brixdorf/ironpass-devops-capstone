@@ -34,12 +34,6 @@ variable "vpc_cidr" {
   default     = "10.20.0.0/16"
 }
 
-variable "availability_zones" {
-  description = "Two availability zones, one public and one private subnet in each"
-  type        = list(string)
-  default     = ["ap-south-1a", "ap-south-1b"]
-}
-
 variable "public_subnet_cidrs" {
   description = "CIDR blocks of the two public subnets"
   type        = list(string)
