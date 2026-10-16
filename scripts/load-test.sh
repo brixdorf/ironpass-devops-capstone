@@ -3,13 +3,21 @@
 # adds pods. Watch it in a second terminal with:
 #   kubectl get hpa -n ironpass -w
 #
-# Usage: URL=http://<ingress-hostname> ./scripts/load-test.sh
+# Usage: ./scripts/load-test.sh                     (finds the load balancer itself)
+#        URL=http://<ingress-hostname> ./scripts/load-test.sh
 set -euo pipefail
 
-URL="${URL:?set URL, for example URL=http://my-elb.ap-south-1.elb.amazonaws.com}"
+# default: the load balancer address of the Traefik Ingress controller
+if [ -z "${URL:-}" ]; then
+  HOST="$(kubectl get svc -n traefik traefik -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
+  URL="http://${HOST:?set URL, for example URL=http://my-elb.ap-south-1.elb.amazonaws.com}"
+fi
 DURATION="${DURATION:-240}"        # seconds
 CONCURRENCY="${CONCURRENCY:-30}"   # parallel clients
 NAMESPACE="${NAMESPACE:-ironpass}"
+
+# make sure the path we are about to hammer really answers
+curl -fsS -o /dev/null "$URL/api/stats" || { echo "No answer from $URL/api/stats"; exit 1; }
 
 echo "Sending traffic to $URL for ${DURATION}s with $CONCURRENCY clients"
 

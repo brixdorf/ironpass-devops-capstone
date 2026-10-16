@@ -9,7 +9,7 @@ helm repo update
 
 helm upgrade --install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
   --namespace monitoring --create-namespace \
-  --version 92.8.0 \
+  --version 92.9.0 \
   -f "$ROOT/monitoring/kube-prometheus-stack-values.yaml" \
   --wait --timeout 10m
 
