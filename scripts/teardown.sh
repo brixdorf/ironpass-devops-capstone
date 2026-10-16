@@ -165,10 +165,24 @@ verify_nothing_left() {
     --query 'NatGateways[].NatGatewayId' --output text)"
   check "network interfaces" "$(aws ec2 describe-network-interfaces --region "$REGION" \
     --filters Name=tag:Project,Values=ironpass --query 'NetworkInterfaces[].NetworkInterfaceId' --output text)"
+  check "vpcs" "$(aws ec2 describe-vpcs --region "$REGION" \
+    --filters Name=tag:Project,Values=ironpass --query 'Vpcs[].VpcId' --output text)"
+  check "subnets" "$(aws ec2 describe-subnets --region "$REGION" \
+    --filters Name=tag:Project,Values=ironpass --query 'Subnets[].SubnetId' --output text)"
+  check "security groups" "$(aws ec2 describe-security-groups --region "$REGION" \
+    --filters Name=tag:Project,Values=ironpass --query 'SecurityGroups[].GroupId' --output text)"
+  check "elastic ips" "$(aws ec2 describe-addresses --region "$REGION" \
+    --filters Name=tag:Project,Values=ironpass --query 'Addresses[].AllocationId' --output text)"
+  check "cluster log group" "$(aws logs describe-log-groups --region "$REGION" \
+    --log-group-name-prefix "/aws/eks/$CLUSTER" --query 'logGroups[].logGroupName' --output text)"
+  check "kms aliases for the cluster" "$(aws kms list-aliases --region "$REGION" \
+    --query "Aliases[?contains(AliasName, '$CLUSTER')].AliasName" --output text)"
   check "eks clusters" "$(aws eks list-clusters --region "$REGION" \
     --query "clusters[?contains(@, 'ironpass')]" --output text)"
   check "github oidc provider" "$(aws iam list-open-id-connect-providers \
     --query "OpenIDConnectProviderList[?contains(Arn, 'token.actions.githubusercontent.com')].Arn" --output text)"
+  check "eks oidc provider" "$(aws iam list-open-id-connect-providers \
+    --query "OpenIDConnectProviderList[?contains(Arn, 'oidc.eks.$REGION')].Arn" --output text)"
   check "iam role $ROLE_NAME" "$(aws iam list-roles \
     --query "Roles[?RoleName=='$ROLE_NAME'].Arn" --output text)"
 
@@ -222,7 +236,7 @@ say "6. verify nothing is left"
 if [ "$MODE" = "dry-run" ]; then
   echo "[dry-run] terraform state list must be empty"
   echo "[dry-run] no resources tagged Project=ironpass"
-  echo "[dry-run] no load balancers, ebs volumes, nat gateways, network interfaces, eks clusters"
+  echo "[dry-run] no load balancers, ebs volumes, nat gateways, network interfaces, vpcs, subnets, security groups, elastic ips, eks clusters"
   echo "[dry-run] no github oidc provider and no iam role $ROLE_NAME"
 else
   verify_nothing_left || { echo "Teardown finished with leftovers, see FAIL lines above."; exit 1; }
