@@ -764,8 +764,17 @@ td.mono { white-space: nowrap; }
 
 @media (max-width: 520px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
-  .card { padding: var(--s-3); }
-  .card-value { font-size: var(--fs-xl); }
+  .card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--s-3);
+    align-items: center;
+    padding: var(--s-3);
+  }
+  .card .icon-tile { grid-row: 1 / span 2; width: 36px; height: 36px; }
+  .card-value { font-size: var(--fs-lg); margin-top: 0; }
+  .card-label { font-size: var(--fs-xs); line-height: 1.25; }
+  .skeleton-number { margin-top: 0; height: 26px; }
   .wordmark { font-size: var(--fs-md); }
   .segmented { gap: 0; padding: 3px; }
   .seg { padding: 0 6px; gap: 5px; font-size: 0.82rem; }
