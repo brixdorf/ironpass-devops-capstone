@@ -39,7 +39,7 @@ export default function Header({ onSignup }) {
             <h1 className="wordmark">
               Iron<b>Pass</b>
             </h1>
-            <span className="tagline">Gym membership portal</span>
+            <span className="tagline">Gym membership desk</span>
           </div>
         </div>
         <div className="topbar-actions">
