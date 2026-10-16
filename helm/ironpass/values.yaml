@@ -64,3 +64,7 @@ hpa:
 serviceMonitor:
   enabled: true
   interval: 15s
+
+# Dashboard as code: a ConfigMap that Grafana picks up (needs kube-prometheus-stack)
+grafanaDashboard:
+  enabled: true

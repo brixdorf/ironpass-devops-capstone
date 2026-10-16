@@ -1,0 +1,14 @@
+{{- if .Values.grafanaDashboard.enabled }}
+# The Grafana sidecar in kube-prometheus-stack loads every ConfigMap with this
+# label, so the dashboard shows up when the app is deployed.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "ironpass.name" . }}-dashboard
+  labels:
+    {{- include "ironpass.labels" . | nindent 4 }}
+    grafana_dashboard: "1"
+data:
+  ironpass.json: |-
+{{ .Files.Get "dashboards/ironpass.json" | indent 4 }}
+{{- end }}

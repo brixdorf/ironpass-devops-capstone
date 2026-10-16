@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Installs Prometheus and Grafana and loads the IronPass dashboard.
+# Installs Prometheus and Grafana (kube-prometheus-stack).
+# The IronPass dashboard and the ServiceMonitor come with the app's Helm chart,
+# so they appear as soon as the app is deployed.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -11,14 +13,8 @@ helm upgrade --install kube-prometheus-stack prometheus-community/kube-prometheu
   --namespace monitoring --create-namespace \
   --version 92.9.0 \
   -f "$ROOT/monitoring/kube-prometheus-stack-values.yaml" \
+  --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false \
+  --set-json 'prometheus.prometheusSpec.serviceMonitorNamespaceSelector={}' \
   --wait --timeout 10m
-
-# The Grafana sidecar picks up any ConfigMap labelled grafana_dashboard=1.
-kubectl create configmap ironpass-dashboard \
-  --namespace monitoring \
-  --from-file=ironpass.json="$ROOT/monitoring/dashboards/ironpass.json" \
-  --dry-run=client -o yaml \
-  | kubectl label --local -f - grafana_dashboard=1 -o yaml \
-  | kubectl apply -f -
 
 kubectl get pods -n monitoring

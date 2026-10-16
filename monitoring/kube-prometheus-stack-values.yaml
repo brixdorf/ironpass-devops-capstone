@@ -37,7 +37,7 @@ grafana:
 alertmanager:
   enabled: false
 
-# keep the footprint small, the nodes are only t3.medium
+# keep the footprint small, the nodes have 2 vCPU and 4 GiB each
 kubeEtcd:
   enabled: false
 kubeControllerManager:

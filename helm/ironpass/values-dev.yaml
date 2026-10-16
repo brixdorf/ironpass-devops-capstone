@@ -34,3 +34,6 @@ hpa:
 # kind and Minikube have no Prometheus Operator, so there is no ServiceMonitor CRD
 serviceMonitor:
   enabled: false
+
+grafanaDashboard:
+  enabled: false
