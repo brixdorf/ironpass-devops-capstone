@@ -492,7 +492,7 @@ Where things live in this repository, and how to remove the AWS resources when y
 
 ```text
 backend/            FastAPI app (app/ with main, models, schemas, db, config, routers, services), Alembic, tests
-frontend/           React and Vite app, nginx config template
+frontend/           React and Vite app, nginx config template, icons in public/
 k8s/                plain manifests for the kind smoke test, namespace, storage class, Traefik values
 helm/ironpass/      Helm chart (dev and prod values, dashboard, ServiceMonitor, HPA)
 terraform/          VPC, EKS and GitHub OIDC
@@ -500,6 +500,7 @@ monitoring/         kube-prometheus-stack values and notes
 troubleshooting/    three broken manifests for practice
 scripts/            bootstrap, monitoring install, load test, smoke test, teardown
 docs/               demo guide, security note, versions, troubleshooting guide, video script, screenshots
+docs/assets/        logo.svg, social-preview.png (1280 x 640 for the GitHub repository), README icons
 .github/workflows/  the CI/CD pipeline
 IronPass-Presentation.pptx, IronPass-Presentation.pdf
 docker-compose.yml
