@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" role="img" aria-label="Repository structure">
+  <title>Repository structure</title>
+  <rect width="36" height="36" rx="10" fill="#0B1020"/>
+  <rect width="36" height="36" rx="10" fill="#FFB547" fill-opacity="0.2"/>
+  <rect x="0.5" y="0.5" width="35" height="35" rx="9.5" fill="none" stroke="#FFB547" stroke-opacity="0.5"/>
+  <g transform="translate(6 6)" fill="none" stroke="#FFB547" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z" />
+    <path d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z" />
+    <path d="M3 5a2 2 0 0 0 2 2h3" />
+    <path d="M3 3v13a2 2 0 0 0 2 2h3" />
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" role="img" aria-label="Built with">
+  <title>Built with</title>
+  <rect width="36" height="36" rx="10" fill="#0B1020"/>
+  <rect width="36" height="36" rx="10" fill="#C6FF3D" fill-opacity="0.2"/>
+  <rect x="0.5" y="0.5" width="35" height="35" rx="9.5" fill="none" stroke="#C6FF3D" stroke-opacity="0.5"/>
+  <g transform="translate(6 6)" fill="none" stroke="#C6FF3D" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />
+    <rect x="14" y="2" width="8" height="8" rx="1" />
+  </g>
+</svg>

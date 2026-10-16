@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" role="img" aria-label="Tests">
+  <title>Tests</title>
+  <rect width="36" height="36" rx="10" fill="#0B1020"/>
+  <rect width="36" height="36" rx="10" fill="#FF5D5D" fill-opacity="0.2"/>
+  <rect x="0.5" y="0.5" width="35" height="35" rx="9.5" fill="none" stroke="#FF5D5D" stroke-opacity="0.5"/>
+  <g transform="translate(6 6)" fill="none" stroke="#FF5D5D" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2" />
+    <path d="M6.453 15h11.094" />
+    <path d="M8.5 2h7" />
+  </g>
+</svg>
