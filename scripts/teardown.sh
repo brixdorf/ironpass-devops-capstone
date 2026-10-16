@@ -129,9 +129,41 @@ no_load_balancer_left() {
     --query "LoadBalancers[?contains(LoadBalancerName, 'ironpass')].LoadBalancerArn" --output text)" ]
 }
 
+# The AWS tag index can keep showing a deleted resource for an hour or more.
+# So every ARN it returns is checked once more with a describe call, and only
+# the ones that still exist are reported.
+tagged_resources_still_there() {
+  local arn type id
+  for arn in $(aws resourcegroupstaggingapi get-resources --region "$REGION" \
+      --tag-filters Key=Project,Values=ironpass --query 'ResourceTagMappingList[].ResourceARN' --output text); do
+    type="${arn#*:*:*:*:*:}"; id="${type#*/}"; type="${type%%/*}"
+    case "$type" in
+      instance)
+        [ -n "$(aws ec2 describe-instances --region "$REGION" --instance-ids "$id" \
+          --query "Reservations[].Instances[?State.Name!='terminated'].InstanceId" --output text 2>/dev/null)" ] && printf '%s ' "$arn" ;;
+      natgateway)
+        [ -n "$(aws ec2 describe-nat-gateways --region "$REGION" --nat-gateway-ids "$id" \
+          --query "NatGateways[?State!='deleted'].NatGatewayId" --output text 2>/dev/null)" ] && printf '%s ' "$arn" ;;
+      network-interface)
+        aws ec2 describe-network-interfaces --region "$REGION" --network-interface-ids "$id" >/dev/null 2>&1 && printf '%s ' "$arn" ;;
+      volume)
+        aws ec2 describe-volumes --region "$REGION" --volume-ids "$id" >/dev/null 2>&1 && printf '%s ' "$arn" ;;
+      security-group)
+        aws ec2 describe-security-groups --region "$REGION" --group-ids "$id" >/dev/null 2>&1 && printf '%s ' "$arn" ;;
+      *) printf '%s ' "$arn" ;;
+    esac
+  done
+  return 0
+}
+
 # ---- step 6: the final checks ----------------------------------------------
 verify_nothing_left() {
   local failed=0
+  # An expired login makes every check below come back empty, which would look like a pass.
+  if ! aws sts get-caller-identity --query Account --output text >/dev/null 2>&1; then
+    echo "FAIL cannot reach AWS, sign in again and run the checks once more"
+    return 1
+  fi
   check() {
     local label="$1" value="$2"
     if [ -n "$value" ] && [ "$value" != "None" ]; then
@@ -149,8 +181,7 @@ verify_nothing_left() {
     echo "ok   terraform state is empty"
   fi
 
-  check "resources tagged Project=ironpass" "$(aws resourcegroupstaggingapi get-resources --region "$REGION" \
-    --tag-filters Key=Project,Values=ironpass --query 'ResourceTagMappingList[].ResourceARN' --output text)"
+  check "resources tagged Project=ironpass" "$(tagged_resources_still_there)"
   check "classic load balancers" "$(classic_lbs_left)"
   check "application or network load balancers" "$(aws elbv2 describe-load-balancers --region "$REGION" \
     --query "LoadBalancers[?contains(LoadBalancerName, 'ironpass')].LoadBalancerArn" --output text)"
