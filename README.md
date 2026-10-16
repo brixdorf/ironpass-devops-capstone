@@ -133,6 +133,7 @@ $ curl -s http://localhost:8000/api/stats
 <img src="docs/screenshots/05c-api-health.png" alt="localhost:8000/health" width="500">
 <img src="docs/screenshots/05d-api-metrics.png" alt="localhost:8000/metrics" width="700">
 <img src="docs/screenshots/25-checkin-rejected-expired-plan.png" alt="The UI refuses the check-in of an expired member" width="700">
+<img src="docs/screenshots/24-database-members-table.png" alt="The members table inside PostgreSQL on the cluster" width="600">
 
 </details>
 
@@ -259,16 +260,20 @@ The Ingress sends `/` to the frontend Service (port 80) and `/api` to the backen
 
 Install, upgrade and rollback with `helm history` and `helm rollback`:
 
+<img src="docs/screenshots/13-kubectl-get-nodes.png" alt="kubectl get nodes" width="800">
 <img src="docs/screenshots/14-kubectl-get-pods.png" alt="kubectl get pods" width="700">
 <img src="docs/screenshots/15-kubectl-get-svc-ingress.png" alt="kubectl get svc and ingress" width="800">
 <img src="docs/screenshots/16-helm-list.png" alt="helm list" width="700">
 <img src="docs/screenshots/16b-helm-history-and-rollback.png" alt="helm history and helm rollback" width="800">
 <img src="docs/screenshots/17-app-through-traefik-ingress.png" alt="The app through the Ingress load balancer" width="700">
+<img src="docs/screenshots/17b-ingress-curl.png" alt="curl through the load balancer, / and /api both answer" width="700">
+<img src="docs/screenshots/26-ingress-nginx-removed.png" alt="ingress-nginx uninstalled and its old load balancer gone" width="800">
 
 **Autoscaling.** The HPA scales the backend between 2 and 6 pods at 50 percent CPU. `scripts/load-test.sh` sends traffic to a real path (`/api/members`, `/api/stats`, `/api/checkins`) until the autoscaler adds pods. metrics-server provides the CPU numbers.
 
 <img src="docs/screenshots/19-hpa-before-load.png" alt="kubectl get hpa before the load" width="700">
 <img src="docs/screenshots/19b-hpa-during-load.png" alt="kubectl get hpa during the load, 6 replicas" width="700">
+<img src="docs/screenshots/19c-load-test-script-timeline.png" alt="Timeline printed by the load script" width="800">
 
 </details>
 
@@ -297,6 +302,7 @@ Note on the nodes: this AWS account is on the free plan and refuses `t3.medium`,
 <img src="docs/screenshots/10-aws-vpc-subnets.png" alt="aws describe VPC and subnets" width="800">
 <img src="docs/screenshots/11-aws-eks-cluster-and-nodegroup.png" alt="aws describe EKS cluster and node group" width="800">
 <img src="docs/screenshots/12-terraform-outputs.png" alt="terraform output" width="700">
+<img src="docs/screenshots/22-github-oidc-role.png" alt="GitHub OIDC role and EKS access entry" width="800">
 <img src="docs/screenshots/09b-terraform-module-upgrade.png" alt="plan and apply of the module upgrade, then no changes" width="700">
 <img src="docs/screenshots/27-teardown-dry-run.png" alt="The teardown script ready, dry run" width="800">
 
