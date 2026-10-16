@@ -4,12 +4,38 @@ server {
   root /usr/share/nginx/html;
   index index.html;
 
+  # pages: a path without a file extension falls back to the app
   location / {
     try_files $uri /index.html;
   }
 
+  # the app page itself must always be checked again, so a new release shows up at once
+  location = /index.html {
+    add_header Cache-Control "no-cache";
+  }
+
+  # built files have a hash in their name, so they can be cached for a year
+  location ^~ /assets/ {
+    expires 1y;
+    try_files $uri =404;
+  }
+
+  # the web app manifest needs its own content type
+  location = /manifest.webmanifest {
+    types { }
+    default_type application/manifest+json;
+    expires 1d;
+    try_files $uri =404;
+  }
+
+  # icons and other files: a missing file with an extension is a 404, never the index page
+  location ~* "\.[a-z0-9]+$" {
+    expires 7d;
+    try_files $uri =404;
+  }
+
   # the browser calls /api, nginx forwards it to the backend service
-  location /api/ {
+  location ^~ /api/ {
     proxy_pass ${BACKEND_URL};
     proxy_http_version 1.1;
     proxy_set_header Host $host;
