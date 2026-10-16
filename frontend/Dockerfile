@@ -1,5 +1,5 @@
 # stage 1: build the static files with Node
-FROM node:22-alpine AS build
+FROM node:24.22.0-alpine3.24 AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # stage 2: serve them with an unprivileged nginx (runs as user 101, port 8080)
-FROM nginxinc/nginx-unprivileged:1.30-alpine3.24
+FROM nginxinc/nginx-unprivileged:1.30.6-alpine3.24
 COPY --from=build /app/dist /usr/share/nginx/html
 # envsubst fills in BACKEND_URL when the container starts
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template

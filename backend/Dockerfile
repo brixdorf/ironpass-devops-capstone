@@ -1,4 +1,5 @@
-FROM python:3.12-slim
+# Python 3.14.8 on Debian trixie (slim)
+FROM python:3.14.8-slim-trixie
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
