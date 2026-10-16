@@ -429,3 +429,11 @@ td {
   background: #ffe6da;
   color: #8a2c05;
 }
+
+.visits li {
+  gap: 12px;
+}
+
+.visits .muted {
+  white-space: nowrap;
+}
