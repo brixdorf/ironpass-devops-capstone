@@ -7,7 +7,7 @@ How the slide deck `IronPass-Presentation.pptx` in the repo root is built.
 
 ```bash
 node assets.mjs <repo-root> <build-dir>
-python build_deck.py <build-dir> IronPass-Presentation.pptx "90+" "3m 37s"
+python build_deck.py <build-dir> IronPass-Presentation.pptx "100+" "5m 31s"
 ```
 
 Fonts (all from Google Fonts): Unbounded for titles, DM Sans for text, JetBrains Mono for code.
