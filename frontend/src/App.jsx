@@ -1,16 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Users } from "lucide-react";
 import { api } from "./api.js";
+import Header from "./components/Header.jsx";
 import StatCards from "./components/StatCards.jsx";
+import Toolbar from "./components/Toolbar.jsx";
 import MembersTable from "./components/MembersTable.jsx";
-import SignupForm from "./components/SignupForm.jsx";
 import CheckInPanel from "./components/CheckInPanel.jsx";
-
-const STATUS_FILTERS = [
-  { value: "", label: "All" },
-  { value: "ACTIVE", label: "Active" },
-  { value: "EXPIRED", label: "Expired" },
-  { value: "FROZEN", label: "Frozen" },
-];
+import ActivityTimeline from "./components/ActivityTimeline.jsx";
+import SignupPanel from "./components/SignupPanel.jsx";
+import ConfirmDialog from "./components/ConfirmDialog.jsx";
+import Toasts from "./components/Toasts.jsx";
+import ErrorState from "./components/ErrorState.jsx";
 
 export default function App() {
   const [stats, setStats] = useState(null);
@@ -20,9 +20,13 @@ export default function App() {
   const [activity, setActivity] = useState([]);
   const [planFilter, setPlanFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [notice, setNotice] = useState(null);
+  const [toasts, setToasts] = useState([]);
+  const [signupOpen, setSignupOpen] = useState(false);
+  const [toDelete, setToDelete] = useState(null);
+  const toastId = useRef(0);
 
   const refresh = useCallback(async () => {
     try {
@@ -40,7 +44,7 @@ export default function App() {
       setActivity(a);
       setError("");
     } catch (err) {
-      setError("Could not reach the IronPass API. " + err.message);
+      setError(err.message);
     } finally {
       setLoading(false);
     }
@@ -51,104 +55,135 @@ export default function App() {
   }, [refresh]);
 
   function flash(kind, text) {
-    setNotice({ kind, text });
-    setTimeout(() => setNotice(null), 4000);
+    const id = ++toastId.current;
+    setToasts((list) => [...list, { id, kind, text }]);
+    setTimeout(() => setToasts((list) => list.filter((t) => t.id !== id)), 4000);
   }
 
+  // Runs an API call, shows a toast and reloads the data. Returns what happened.
   async function attempt(action, successText) {
     try {
-      await action();
+      const data = await action();
       flash("ok", successText);
       await refresh();
-      return true;
+      return { ok: true, data };
     } catch (err) {
       flash("error", err.message);
-      return false;
+      return { ok: false, error: err.message };
     }
   }
 
+  function retry() {
+    setLoading(true);
+    refresh();
+  }
+
+  function resetFilters() {
+    setStatusFilter("");
+    setPlanFilter("");
+    setSearch("");
+  }
+
+  const counts = useMemo(() => {
+    const result = { ALL: allMembers.length, ACTIVE: 0, EXPIRED: 0, FROZEN: 0 };
+    allMembers.forEach((m) => {
+      if (result[m.effective_status] !== undefined) result[m.effective_status] += 1;
+    });
+    return result;
+  }, [allMembers]);
+
+  const visible = useMemo(() => {
+    const needle = search.trim().toLowerCase();
+    if (!needle) return members;
+    return members.filter(
+      (m) => m.full_name.toLowerCase().includes(needle) || m.email.toLowerCase().includes(needle)
+    );
+  }, [members, search]);
+
+  const apiDown = Boolean(error) && !stats;
+
   return (
     <div className="shell">
-      <header className="topbar">
-        <div className="brand">
-          <span className="brand-mark" aria-hidden="true" />
-          <span>
-            Iron<b>Pass</b>
-          </span>
-        </div>
-        <span className="tagline">Gym membership desk</span>
-      </header>
+      <Header onSignup={() => setSignupOpen(true)} />
 
       <main className="content">
-        {error && <div className="banner error">{error}</div>}
-        {notice && <div className={`banner ${notice.kind}`}>{notice.text}</div>}
+        {apiDown ? (
+          <ErrorState message={error} onRetry={retry} />
+        ) : (
+          <>
+            {error && <ErrorState compact message={error} onRetry={retry} />}
+            <StatCards stats={stats} loading={loading} />
 
-        <StatCards stats={stats} />
-
-        <div className="layout">
-          <section className="panel members">
-            <div className="panel-head">
-              <h2>Members</h2>
-              <div className="filters">
-                <div className="chips" role="group" aria-label="Filter by status">
-                  {STATUS_FILTERS.map((f) => (
-                    <button
-                      key={f.value}
-                      className={`chip ${statusFilter === f.value ? "chip-on" : ""}`}
-                      onClick={() => setStatusFilter(f.value)}
-                    >
-                      {f.label}
-                    </button>
-                  ))}
+            <div className="layout">
+              <section className="panel members" aria-labelledby="members-title">
+                <div className="panel-head">
+                  <span className="icon-tile tone-violet" aria-hidden="true">
+                    <Users size={20} />
+                  </span>
+                  <h2 id="members-title">Members</h2>
                 </div>
-                <select
-                  aria-label="Filter by plan"
-                  value={planFilter}
-                  onChange={(e) => setPlanFilter(e.target.value)}
-                >
-                  <option value="">All plans</option>
-                  {plans.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name}
-                    </option>
-                  ))}
-                </select>
+                <Toolbar
+                  counts={counts}
+                  statusFilter={statusFilter}
+                  onStatus={setStatusFilter}
+                  plans={plans}
+                  planFilter={planFilter}
+                  onPlan={setPlanFilter}
+                  search={search}
+                  onSearch={setSearch}
+                />
+                <MembersTable
+                  members={visible}
+                  loading={loading}
+                  onReset={resetFilters}
+                  onRenew={(m) => attempt(() => api.renewMember(m.id), `${m.full_name} renewed`)}
+                  onFreeze={(m) =>
+                    attempt(
+                      () =>
+                        api.updateMember(m.id, {
+                          status: m.status === "FROZEN" ? "ACTIVE" : "FROZEN",
+                        }),
+                      `${m.full_name} updated`
+                    )
+                  }
+                  onDelete={setToDelete}
+                />
+              </section>
+
+              <div className="side">
+                <CheckInPanel
+                  members={allMembers}
+                  onCheckIn={(id) => attempt(() => api.checkIn(id), "Check-in accepted")}
+                />
+                <ActivityTimeline activity={activity} loading={loading} />
               </div>
             </div>
-            <MembersTable
-              members={members}
-              loading={loading}
-              onRenew={(m) => attempt(() => api.renewMember(m.id), `${m.full_name} renewed`)}
-              onFreeze={(m) =>
-                attempt(
-                  () =>
-                    api.updateMember(m.id, {
-                      status: m.status === "FROZEN" ? "ACTIVE" : "FROZEN",
-                    }),
-                  `${m.full_name} updated`
-                )
-              }
-              onDelete={(m) => {
-                if (window.confirm(`Delete ${m.full_name}?`)) {
-                  attempt(() => api.deleteMember(m.id), `${m.full_name} deleted`);
-                }
-              }}
-            />
-          </section>
-
-          <aside className="side">
-            <CheckInPanel
-              members={allMembers}
-              activity={activity}
-              onCheckIn={(id) => attempt(() => api.checkIn(id), "Check-in accepted")}
-            />
-            <SignupForm
-              plans={plans}
-              onCreate={(body) => attempt(() => api.createMember(body), "Member signed up")}
-            />
-          </aside>
-        </div>
+          </>
+        )}
       </main>
+
+      <SignupPanel
+        open={signupOpen}
+        plans={plans}
+        onClose={() => setSignupOpen(false)}
+        onCreate={async (body) => {
+          const outcome = await attempt(() => api.createMember(body), "Member signed up");
+          if (outcome.ok) setSignupOpen(false);
+          return outcome;
+        }}
+      />
+
+      <ConfirmDialog
+        member={toDelete}
+        onCancel={() => setToDelete(null)}
+        onConfirm={async () => {
+          const m = toDelete;
+          setToDelete(null);
+          await attempt(() => api.deleteMember(m.id), `${m.full_name} deleted`);
+        }}
+      />
+
+      <Toasts toasts={toasts} />
     </div>
   );
 }
