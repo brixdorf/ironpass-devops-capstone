@@ -5,13 +5,11 @@
 
 <p align="center">A gym membership app, taken from code on a laptop to a monitored Kubernetes cluster on AWS.</p>
 
-<!-- EDIT THIS LINE (1 of 2): replace REPLACE_WITH_SLIDES_ID with the id of your Google Slides link -->
-<p align="center"><img src="docs/assets/icons/presentation.svg" width="28" height="28" alt="Presentation" align="absmiddle"> <b>Presentation, Google Slides:</b> Read the 20 slide walkthrough<br><a href="https://docs.google.com/presentation/d/REPLACE_WITH_SLIDES_ID/edit?usp=sharing">https://docs.google.com/presentation/d/REPLACE_WITH_SLIDES_ID/edit?usp=sharing</a></p>
+<p align="center"><a href="https://www.loom.com/share/edf9d6c439ef47bc933275d064a433ac"><img src="docs/assets/watch-video.svg" width="420" height="72" alt="Watch the video on Loom"></a></p>
 
-<!-- EDIT THIS LINE (2 of 2): replace REPLACE_WITH_VIDEO_ID with the id of your Loom link -->
-<p align="center"><img src="docs/assets/icons/video.svg" width="28" height="28" alt="Video" align="absmiddle"> <b>Video, Loom:</b> Watch the 2 minute demo<br><a href="https://www.loom.com/share/REPLACE_WITH_VIDEO_ID">https://www.loom.com/share/REPLACE_WITH_VIDEO_ID</a></p>
+<p align="center"><i>I put real effort into this one, so please press play.</i></p>
 
-<p align="center"><img src="docs/assets/icons/pdf.svg" width="28" height="28" alt="PDF copy" align="absmiddle"> <b>PDF copy:</b> The same slides as a PDF, in this repo<br><a href="IronPass-Presentation.pdf">IronPass-Presentation.pdf</a></p>
+<p align="center"><img src="docs/assets/icons/presentation.svg" width="22" height="22" alt="Presentation" align="absmiddle"> <a href="https://docs.google.com/presentation/d/1zuin9D52KBy6R9sv4_vkBsBlexBDfg_IK_NvHW32jPU/edit?usp=sharing">Read the 20 slides on Google Slides</a> <sub>(or the <a href="IronPass-Presentation.pdf">PDF copy</a>)</sub><br><sub>Prefer to read? The slides tell the same story.</sub></p>
 
 <p align="center">
   <img src="docs/screenshots/01-app-running-localhost-3000.png" alt="The IronPass dashboard with the member table, the check-in panel and the activity feed" width="800">
@@ -20,7 +18,7 @@
 
 <table align="center"><tr><td align="center" width="150"><img src="docs/assets/icons/glance-endpoints.svg" width="28" height="28" alt="Endpoints"><br><b>15</b><br><sub>endpoints</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-tests.svg" width="28" height="28" alt="Tests"><br><b>32</b><br><sub>tests</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pipeline.svg" width="28" height="28" alt="Pipeline time"><br><b>5m 31s</b><br><sub>pipeline</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pods.svg" width="28" height="28" alt="Pods"><br><b>5</b><br><sub>pods</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-targets.svg" width="28" height="28" alt="Prometheus targets"><br><b>19</b><br><sub>targets</sub></td></tr></table>
 
-IronPass is a small web app for a gym front desk. Staff sign new members up, see who is active or expired, and check people in at the door. The project shows the whole journey of an app, from the first commit to a monitored cluster. A student built it to learn DevOps.
+IronPass is a small web app for a gym front desk. Staff sign new members up, see who is active or expired, and check people in at the door. The project shows the whole journey of an app, from the first commit to a monitored cluster.
 
 > [!IMPORTANT]
 > **The one rule that matters:** if a member's plan has expired, the check-in is refused. The API answers with status 409 and the screen shows a red message with the expiry date. This rule is enforced in the API and covered by tests.
@@ -83,11 +81,6 @@ Open http://localhost:3000 for the app and http://localhost:8000/docs for the AP
 <p align="center">
   <img src="docs/screenshots/01b-app-mobile-390.png" alt="The same page on a phone, 390 pixels wide: summary cards first, then the member cards" width="260">
   <br><i>The same page on a phone. The table turns into cards.</i>
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/29-favicon-sizes.png" alt="The IronPass tab icon at 16 pixels, 32 pixels and the 180 pixel touch icon, side by side" width="420">
-  <br><i>The browser tab icon at 16 and 32 px, and the 180 px home screen icon. All come from one barbell mark.</i>
 </p>
 
 The sections below hold the technical details. Each one is collapsed, click a title to open it.
