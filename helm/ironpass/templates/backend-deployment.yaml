@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "ironpass.name" . }}-backend
+  name: {{ include "ironpass.backend.name" . }}
   labels:
     {{- include "ironpass.labels" . | nindent 4 }}
     app.kubernetes.io/component: backend
@@ -29,14 +29,14 @@ spec:
           command:
             - sh
             - -c
-            - until pg_isready -h {{ include "ironpass.name" . }}-postgres -p {{ .Values.postgres.port }}; do echo waiting for postgres; sleep 2; done
+            - until pg_isready -h {{ include "ironpass.postgres.name" . }} -p {{ .Values.postgres.port }}; do echo waiting for postgres; sleep 2; done
           securityContext:
             # the postgres image has a passwd entry for uid 70, pg_isready needs one
             runAsUser: 70
             allowPrivilegeEscalation: false
       containers:
         - name: backend
-          image: "{{ .Values.backend.image }}:{{ .Values.backend.tag }}"
+          image: "{{ .Values.backend.image }}:{{ required "set backend.tag to the image tag (the commit SHA)" .Values.backend.tag }}"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http

@@ -1,4 +1,5 @@
 # Settings used for the EKS cluster.
+# The pipeline adds backend.tag and frontend.tag (the commit SHA) with --set.
 backend:
   replicas: 2
 
@@ -9,6 +10,9 @@ postgres:
   storage:
     size: 5Gi
     className: ironpass-gp3
+
+ingress:
+  className: traefik
 
 hpa:
   minReplicas: 2

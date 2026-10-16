@@ -1,0 +1,80 @@
+# Backend for the smoke test. The image name ironpass-backend:ci is loaded into
+# kind by the pipeline, nothing is pulled from a registry.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: ironpass
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+      containers:
+        - name: backend
+          image: ironpass-backend:ci
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ironpass-db
+                  key: POSTGRES_PASSWORD
+            # $(POSTGRES_PASSWORD) is filled in by Kubernetes from the line above
+            - name: DATABASE_URL
+              value: postgresql+psycopg://ironpass:$(POSTGRES_PASSWORD)@postgres:5432/ironpass
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 50m
+              memory: 96Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            # the root file system is read only, /tmp is the one place it may write
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: ironpass
+spec:
+  type: ClusterIP
+  selector:
+    app: backend
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http

@@ -1,0 +1,29 @@
+# Values for the Traefik Helm chart (https://traefik.github.io/charts).
+# Traefik is the Ingress controller on every environment (kind, Minikube, EKS).
+# It was picked because the Kubernetes project retired ingress-nginx in March 2026,
+# while Traefik is actively maintained and implements the standard Ingress API.
+deployment:
+  replicas: 1
+
+ingressClass:
+  enabled: true
+  isDefaultClass: false
+  name: traefik
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    memory: 256Mi
+
+ports:
+  # no TLS certificate in this demo, so only port 80 is exposed on the load balancer
+  websecure:
+    expose:
+      default: false
+
+service:
+  annotations:
+    # tags on the AWS load balancer so the teardown script can find it
+    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "Project=ironpass,ManagedBy=helm"

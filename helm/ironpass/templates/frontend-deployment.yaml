@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "ironpass.name" . }}-frontend
+  name: {{ include "ironpass.frontend.name" . }}
   labels:
     {{- include "ironpass.labels" . | nindent 4 }}
     app.kubernetes.io/component: frontend
@@ -22,14 +22,14 @@ spec:
         runAsUser: 101
       containers:
         - name: frontend
-          image: "{{ .Values.frontend.image }}:{{ .Values.frontend.tag }}"
+          image: "{{ .Values.frontend.image }}:{{ required "set frontend.tag to the image tag (the commit SHA)" .Values.frontend.tag }}"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: {{ .Values.frontend.containerPort }}
           env:
             - name: BACKEND_URL
-              value: "http://{{ include "ironpass.name" . }}-backend:{{ .Values.backend.servicePort }}"
+              value: "http://{{ include "ironpass.backend.name" . }}:{{ .Values.backend.servicePort }}"
           livenessProbe:
             httpGet:
               path: /health

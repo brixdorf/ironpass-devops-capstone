@@ -2,7 +2,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "ironpass.name" . }}-backend
+  name: {{ include "ironpass.backend.name" . }}
   labels:
     {{- include "ironpass.labels" . | nindent 4 }}
 spec:

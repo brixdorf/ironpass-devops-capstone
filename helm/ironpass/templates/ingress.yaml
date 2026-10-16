@@ -14,14 +14,14 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ include "ironpass.name" . }}-backend
+                name: {{ include "ironpass.backend.name" . }}
                 port:
                   number: {{ .Values.backend.servicePort }}
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ include "ironpass.name" . }}-frontend
+                name: {{ include "ironpass.frontend.name" . }}
                 port:
                   number: {{ .Values.frontend.servicePort }}
       {{- if .Values.ingress.host }}

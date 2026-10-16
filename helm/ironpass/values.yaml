@@ -2,7 +2,8 @@
 
 backend:
   image: ghcr.io/brixdorf/ironpass-backend
-  tag: latest
+  # set by the pipeline to the commit SHA, or by values-dev.yaml for a local image
+  tag: ""
   replicas: 2
   containerPort: 8000
   servicePort: 8000
@@ -16,7 +17,8 @@ backend:
 
 frontend:
   image: ghcr.io/brixdorf/ironpass-frontend
-  tag: latest
+  # set by the pipeline to the commit SHA, or by values-dev.yaml for a local image
+  tag: ""
   replicas: 2
   containerPort: 8080
   servicePort: 80
@@ -29,7 +31,7 @@ frontend:
       memory: 128Mi
 
 postgres:
-  image: postgres:16-alpine
+  image: postgres:18.6-alpine3.24
   database: ironpass
   username: ironpass
   # leave empty to get a random password that is kept between upgrades
@@ -49,7 +51,7 @@ postgres:
 
 ingress:
   enabled: true
-  className: nginx
+  className: traefik
   # empty host matches any host name, which suits a bare load balancer address
   host: ""
 

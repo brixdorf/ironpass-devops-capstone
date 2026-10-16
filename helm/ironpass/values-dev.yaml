@@ -1,5 +1,11 @@
-# Small settings for a laptop or a throwaway cluster.
+# Small settings for a laptop or a throwaway cluster (kind or Minikube).
+# Build the images yourself and load them into the cluster first:
+#   docker build -t ironpass-backend:dev backend
+#   docker build -t ironpass-frontend:dev frontend
+#   kind load docker-image ironpass-backend:dev ironpass-frontend:dev
 backend:
+  image: ironpass-backend
+  tag: dev
   replicas: 2
   resources:
     requests:
@@ -10,6 +16,8 @@ backend:
       memory: 192Mi
 
 frontend:
+  image: ironpass-frontend
+  tag: dev
   replicas: 2
 
 postgres:
@@ -17,7 +25,12 @@ postgres:
     size: 1Gi
 
 ingress:
+  className: traefik
   host: ironpass.local
 
 hpa:
   maxReplicas: 3
+
+# kind and Minikube have no Prometheus Operator, so there is no ServiceMonitor CRD
+serviceMonitor:
+  enabled: false
