@@ -16,7 +16,7 @@
   <br><i>The IronPass dashboard running locally, after a new member was signed up.</i>
 </p>
 
-<table align="center"><tr><td align="center" width="150"><img src="docs/assets/icons/glance-endpoints.svg" width="28" height="28" alt="Endpoints"><br><b>15</b><br><sub>API endpoints</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-tests.svg" width="28" height="28" alt="Tests"><br><b>32</b><br><sub>tests pass</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pipeline.svg" width="28" height="28" alt="Pipeline time"><br><b>5 min 8 s</b><br><sub>pipeline run</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pods.svg" width="28" height="28" alt="Pods"><br><b>5</b><br><sub>pods on EKS</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-targets.svg" width="28" height="28" alt="Prometheus targets"><br><b>19</b><br><sub>targets up</sub></td></tr></table>
+<table align="center"><tr><td align="center" width="150"><img src="docs/assets/icons/glance-endpoints.svg" width="28" height="28" alt="Endpoints"><br><b>15</b><br><sub>endpoints</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-tests.svg" width="28" height="28" alt="Tests"><br><b>32</b><br><sub>tests</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pipeline.svg" width="28" height="28" alt="Pipeline time"><br><b>5m 8s</b><br><sub>pipeline</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-pods.svg" width="28" height="28" alt="Pods"><br><b>5</b><br><sub>pods</sub></td><td align="center" width="150"><img src="docs/assets/icons/glance-targets.svg" width="28" height="28" alt="Prometheus targets"><br><b>19</b><br><sub>targets</sub></td></tr></table>
 
 IronPass is a small web app for a gym front desk. Staff sign new members up, see who is active or expired, and check people in at the door. The project shows the whole journey of an app, from the first commit to a monitored cluster. A student built it to learn DevOps.
 
@@ -111,7 +111,7 @@ Why Traefik: the Kubernetes project retired ingress-nginx in March 2026 (no more
 </details>
 
 <details>
-<summary><img src="docs/assets/icons/api.svg" width="24" height="24" alt="API endpoints" align="absmiddle"> <b>API endpoints with example requests</b></summary>
+<summary><img src="docs/assets/icons/api.svg" width="24" height="24" alt="endpoints" align="absmiddle"> <b>API endpoints with example requests</b></summary>
 
 An API is how the web page talks to the server, and REST means each address does one clear job, for example listing members. This part shows every address with real requests and real answers.
 
