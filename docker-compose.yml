@@ -1,36 +1,62 @@
+# Services reach each other by service name: the backend talks to "postgres"
+# and the frontend (nginx) talks to "backend". Compose gives them a private network.
 services:
   postgres:
-    image: postgres:16-alpine
+    image: postgres:18.6-alpine3.24
     environment:
       POSTGRES_DB: ironpass
       POSTGRES_USER: ironpass
-      POSTGRES_PASSWORD: ironpass
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ironpass}
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      # named volume: the data survives "docker compose down".
+      # "docker compose down -v" deletes it.
+      - pgdata:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ironpass -d ironpass"]
       interval: 5s
       timeout: 3s
-      retries: 10
+      retries: 12
+      start_period: 5s
 
   backend:
     build: ./backend
     environment:
-      DATABASE_URL: postgresql+psycopg://ironpass:ironpass@postgres:5432/ironpass
+      DATABASE_URL: postgresql+psycopg://ironpass:${POSTGRES_PASSWORD:-ironpass}@postgres:5432/ironpass
     ports:
       - "8000:8000"
+    restart: on-failure
     depends_on:
       postgres:
+        # "service_healthy" waits until postgres accepts connections,
+        # plain depends_on only waits for the container to start
         condition: service_healthy
+    healthcheck:
+      # /ready is true only when the API can reach the database
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8000/ready', timeout=3)"
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
 
   frontend:
     build: ./frontend
     environment:
+      # nginx forwards /api to this address. Kubernetes sets its own value.
       BACKEND_URL: http://backend:8000
     ports:
       - "3000:8080"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 6
 
 volumes:
   pgdata:
