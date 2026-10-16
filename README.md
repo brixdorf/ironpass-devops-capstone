@@ -42,13 +42,13 @@ IronPass is a small web app for a gym front desk. Staff sign new members up, see
 
 ```mermaid
 flowchart LR
-  dev["Developer"] -->|git push| gh["GitHub"]
-  gh --> ci["GitHub Actions"]
-  ci -->|test, build, scan| img["Images in GHCR"]
-  tf["Terraform"] --> aws["AWS VPC and EKS"]
-  img -->|helm upgrade| aws
-  aws --> app["IronPass pods"]
-  app -->|/metrics| prom["Prometheus"]
+  dev["Developer<br/>git push"] --> gh["GitHub"]
+  gh --> ci["Actions<br/>test, scan"]
+  ci --> img["Images<br/>in GHCR"]
+  img --> aws["AWS EKS<br/>Helm deploy"]
+  tf["Terraform"] --> aws
+  aws --> app["IronPass<br/>pods"]
+  app --> prom["Prometheus"]
   prom --> graf["Grafana"]
 
   classDef code fill:#0B1020,stroke:#C6FF3D,stroke-width:2px,color:#C6FF3D
