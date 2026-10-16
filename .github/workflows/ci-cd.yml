@@ -53,6 +53,7 @@ jobs:
       - name: Build frontend
         run: |
           npm ci
+          npm test
           npm run build
         working-directory: frontend
 
