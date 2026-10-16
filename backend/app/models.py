@@ -4,6 +4,7 @@ from sqlalchemy import Date, DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
+from app.enums import MemberStatus, PlanType
 
 
 def utcnow() -> datetime:
@@ -15,6 +16,7 @@ class Plan(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(60), unique=True)
+    plan_type: Mapped[str] = mapped_column(String(20), default=PlanType.MONTHLY.value)
     price_cents: Mapped[int] = mapped_column(Integer)
     duration_days: Mapped[int] = mapped_column(Integer)
 
@@ -28,10 +30,11 @@ class Member(Base):
     full_name: Mapped[str] = mapped_column(String(120))
     email: Mapped[str] = mapped_column(String(160), unique=True)
     plan_id: Mapped[int] = mapped_column(ForeignKey("plans.id"))
-    # active, frozen or cancelled. Expiry is decided by expires_on.
-    status: Mapped[str] = mapped_column(String(20), default="active")
+    # ACTIVE, FROZEN or CANCELLED. EXPIRED is decided by expires_on, not stored.
+    status: Mapped[str] = mapped_column(String(20), default=MemberStatus.ACTIVE.value)
     joined_on: Mapped[date] = mapped_column(Date)
     expires_on: Mapped[date] = mapped_column(Date)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
     plan: Mapped[Plan] = relationship(back_populates="members")
     check_ins: Mapped[list["CheckIn"]] = relationship(

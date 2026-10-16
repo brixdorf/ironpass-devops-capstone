@@ -4,7 +4,7 @@ from alembic import context
 from sqlalchemy import create_engine, text
 
 from app import models  # noqa: F401  (registers the tables on Base)
-from app.config import DATABASE_URL
+from app.config import settings
 from app.db import Base
 
 config = context.config
@@ -15,7 +15,7 @@ target_metadata = Base.metadata
 
 
 def run_migrations_offline() -> None:
-    context.configure(url=DATABASE_URL, target_metadata=target_metadata, literal_binds=True)
+    context.configure(url=settings.database_url, target_metadata=target_metadata, literal_binds=True)
     with context.begin_transaction():
         context.run_migrations()
 
@@ -25,7 +25,7 @@ MIGRATION_LOCK_ID = 727274
 
 
 def run_migrations_online() -> None:
-    engine = create_engine(DATABASE_URL)
+    engine = create_engine(settings.database_url)
     is_postgres = engine.dialect.name == "postgresql"
     # Several backend pods can start at once. On PostgreSQL they take turns
     # so two pods never try to create the same table.
