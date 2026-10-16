@@ -27,6 +27,7 @@ spec:
               echo "worker starting"
               if [ -z "$DB_HOST" ]; then
                 echo "fatal: environment variable DB_HOST is not set" >&2
+                sleep 3
                 exit 1
               fi
               echo "connecting to $DB_HOST"

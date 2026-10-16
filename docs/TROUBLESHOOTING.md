@@ -13,6 +13,9 @@ kubectl get endpoints -n ironpass                  # 5. does the Service have po
 kubectl get pods -n ironpass --show-labels         # 6. do the pod labels match the selector?
 ```
 
+Newer Kubernetes versions (1.33 and up) print a warning that `Endpoints` is deprecated. The command
+still works. The newer name is `kubectl get endpointslices -n ironpass`.
+
 The three labs below are in `troubleshooting/`. Apply a file with `kubectl apply -f FILE`,
 and fix it by editing the file and applying it again. Do not patch live objects by hand.
 
@@ -26,12 +29,13 @@ kubectl get events -n ironpass --sort-by=.lastTimestamp
 ```
 
 What you see: the status goes `ErrImagePull`, then `ImagePullBackOff`. The Events say
-`manifest unknown` for the tag `v9.9.9-does-not-exist`.
+`manifest unknown` or `not found` for the tag `9.9.9-does-not-exist`.
 
-Why: Kubernetes asked GHCR for an image tag that was never pushed.
+Why: Kubernetes asked the registry for an image tag that does not exist.
 
 Fix: change the `image:` line in `troubleshooting/broken-image.yaml` to a tag that exists
-(a commit SHA the pipeline pushed), then apply the file again.
+(`nginxinc/nginx-unprivileged:1.30.6-alpine3.24`), then apply the file again. With IronPass images
+the fix is the same: use a commit SHA tag that the pipeline pushed.
 
 ```bash
 kubectl apply -f troubleshooting/broken-image.yaml

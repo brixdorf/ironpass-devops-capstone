@@ -18,8 +18,8 @@ spec:
         lab: broken-image
     spec:
       containers:
-        - name: backend
-          # this tag was never pushed to the registry
-          image: ghcr.io/brixdorf/ironpass-backend:v9.9.9-does-not-exist
+        - name: web
+          # this tag does not exist in the registry, the working tag is 1.30.6-alpine3.24
+          image: nginxinc/nginx-unprivileged:9.9.9-does-not-exist
           ports:
-            - containerPort: 8000
+            - containerPort: 8080
