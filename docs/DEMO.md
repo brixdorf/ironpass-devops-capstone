@@ -62,13 +62,13 @@ for the backend so it does not clash with `docker compose` on port 8000.
 
 This follows Part O of the course README.
 
-1. **Application.** Open the load balancer address. Sign up a member, then check in an expired member (Rohan Das) and show the rejection message.
+1. **Application.** Open the load balancer address. Point at the green API UP chip in the header, then press **New signup**, fill the panel and save. Pick an expired member (Rohan Das) in the check-in panel, press **Check in** and show the big red refusal with the expiry date. Resize the window to show the phone layout.
 2. **API.** Open http://localhost:8001/docs. Run GET `/api/members`, POST `/api/checkins` for an expired member (409), POST `/api/plans` with `"plan_type": "WEEKLY"` (422), and DELETE a member.
 3. **Database.** Show the table inside the cluster:
    ```bash
    kubectl exec -n ironpass deploy/ironpass-postgres -- sh -c 'psql -U $POSTGRES_USER -d $POSTGRES_DB -c "select id, full_name, status, expires_on from members order by id;"'
    ```
-4. **Git.** Make a small change (for example the tagline in `frontend/src/App.jsx`), then `git add -A && git commit -m "Change dashboard tagline" && git push`.
+4. **Git.** Make a small change (for example the tagline in `frontend/src/components/Header.jsx`), then `git add -A && git commit -m "Change dashboard tagline" && git push`.
 5. **CI, security and registry.** Run `gh run watch` or open the Actions tab. Show the pytest job, the Trivy steps, the smoke test on kind, then the GHCR package with the SHA tag. The deploy job updates the cluster.
 6. **Terraform.** Show `terraform/` in the editor, then `terraform -chdir=terraform output` and `aws eks describe-cluster --name ironpass-eks --query cluster.status`.
 7. **Kubernetes and Helm.**

@@ -41,6 +41,13 @@ Notes:
 | react-dom | 19.3.1 | 2026-10-16 |
 | vite | 8.3.4 | 2026-10-16 |
 | @vitejs/plugin-react | 6.1.2 | 2026-10-16 |
+| lucide-react (icons) | 1.58.0 | 2026-10-16 |
+| @fontsource-variable/unbounded | 5.3.0 | 2026-10-16 |
+| @fontsource-variable/dm-sans | 5.3.0 | 2026-10-16 |
+| @fontsource-variable/jetbrains-mono | 5.3.0 | 2026-10-16 |
+
+The fonts are self-hosted from these packages (latin subset, `font-display: swap`), so the
+website makes no call to Google at runtime and also works offline.
 
 ## Infrastructure
 
@@ -116,3 +123,9 @@ The Trivy program itself is set to `v0.76.0` (the newest release) with the `vers
 | Playwright | 1.64.1 | 2026-10-16 |
 | python-pptx | 1.0.2 | 2026-10-16 |
 | Fonts (Google Fonts) | Unbounded, DM Sans, JetBrains Mono | 2026-10-16 |
+| Inter (only for browser screenshots of GitHub, Swagger and Prometheus) | 4.0 variable TTF from Google Fonts | 2026-10-16 |
+| lucide-static (README icons) | 1.58.0 | 2026-10-16 |
+| simple-icons (deck logos) | 16.35.0 | 2026-10-16 |
+| @axe-core/playwright (accessibility check) | 4.14.0 | 2026-10-16 |
+
+All four font families are under the SIL Open Font License.
