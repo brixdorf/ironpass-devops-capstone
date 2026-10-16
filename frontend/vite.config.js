@@ -11,6 +11,10 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": backend,
+      "/backend-health": {
+        target: backend,
+        rewrite: () => "/health",
+      },
     },
   },
 });
