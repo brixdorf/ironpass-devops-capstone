@@ -1,4 +1,4 @@
-# Lab 2: the pods are Running but the Service has no endpoints.
+# Lab 2: the pod is Running but the Service has no endpoints.
 # Apply it, then compare the Service selector with the pod labels.
 apiVersion: apps/v1
 kind: Deployment
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: nginxinc/nginx-unprivileged:1.30-alpine3.24
+          image: nginxinc/nginx-unprivileged:1.30.6-alpine3.24
           ports:
             - containerPort: 8080
 ---

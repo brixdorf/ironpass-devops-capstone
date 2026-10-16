@@ -1,4 +1,4 @@
-# Lab 1: this Deployment never starts.
+# Lab 1: ImagePullBackOff. This Deployment never starts.
 # Apply it, then find out why with kubectl get pods and kubectl describe pod.
 apiVersion: apps/v1
 kind: Deployment

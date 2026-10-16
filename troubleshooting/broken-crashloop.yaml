@@ -1,0 +1,40 @@
+# Lab 3: CrashLoopBackOff. The container starts, prints an error and exits.
+# Kubernetes keeps restarting it, with longer and longer waits in between.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ironpass-broken-crashloop
+  namespace: ironpass
+  labels:
+    lab: broken-crashloop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lab: broken-crashloop
+  template:
+    metadata:
+      labels:
+        lab: broken-crashloop
+    spec:
+      containers:
+        - name: worker
+          image: busybox:1.37.0
+          command:
+            - sh
+            - -c
+            - |
+              echo "worker starting"
+              if [ -z "$DB_HOST" ]; then
+                echo "fatal: environment variable DB_HOST is not set" >&2
+                exit 1
+              fi
+              echo "connecting to $DB_HOST"
+              sleep 3600
+          # the fix: uncomment these two lines and run kubectl apply -f again
+          # env:
+          #   - { name: DB_HOST, value: ironpass-postgres }
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
