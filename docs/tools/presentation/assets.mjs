@@ -41,6 +41,10 @@ async function render(html, file, { w, h, scale = 1, transparent = false }) {
 // ---------- backgrounds (2560 x 1440) ----------
 const grid = `background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:80px 80px;`;
 const glow = (x, y, color, size, alpha) => `radial-gradient(circle at ${x}% ${y}%, ${color}${alpha} 0%, transparent ${size}%)`;
+// The centre of the two rings on the title slide, in pixels of the 2560 x 1440 background.
+// The logo tile on that slide is placed on this same point (build_deck.py reads it from bg/title-rings.json).
+const RING = { cx: 2210, cy: 690 };
+fs.writeFileSync(`${out}/bg/title-rings.json`, JSON.stringify({ ...RING, width: 2560, height: 1440 }));
 const bgs = {
   "grid-lime": `<div style="position:absolute;inset:0;background:${glow(92, 8, C.lime, 38, "22")},${C.ink};"></div><div style="position:absolute;inset:0;${grid}"></div>`,
   "grid-cyan": `<div style="position:absolute;inset:0;background:${glow(6, 95, C.cyan, 40, "1f")},${glow(95, 5, C.violet, 30, "18")},${C.ink};"></div><div style="position:absolute;inset:0;${grid}"></div>`,
@@ -49,8 +53,8 @@ const bgs = {
   "grid-mint": `<div style="position:absolute;inset:0;background:${glow(90, 90, C.mint, 40, "1c")},${glow(8, 8, C.violet, 25, "18")},${C.ink};"></div><div style="position:absolute;inset:0;${grid}"></div>`,
   "grid-pink": `<div style="position:absolute;inset:0;background:${glow(92, 12, C.pink, 38, "1c")},${glow(5, 90, C.violet, 30, "20")},${C.ink};"></div><div style="position:absolute;inset:0;${grid}"></div>`,
   title: `<div style="position:absolute;inset:0;background:${glow(82, 40, C.lime, 42, "40")},${glow(8, 95, C.violet, 45, "55")},${glow(60, 100, C.coral, 25, "30")},${C.ink};"></div><div style="position:absolute;inset:0;${grid}"></div>
-    <div style="position:absolute;right:-200px;top:140px;width:1100px;height:1100px;border-radius:50%;border:3px solid ${C.lime}44"></div>
-    <div style="position:absolute;right:-60px;top:280px;width:820px;height:820px;border-radius:50%;border:3px solid ${C.cyan}33"></div>`,
+    <div style="position:absolute;left:${RING.cx - 550}px;top:${RING.cy - 550}px;width:1100px;height:1100px;border-radius:50%;border:3px solid ${C.lime}44"></div>
+    <div style="position:absolute;left:${RING.cx - 410}px;top:${RING.cy - 410}px;width:820px;height:820px;border-radius:50%;border:3px solid ${C.cyan}33"></div>`,
   lime: `<div style="position:absolute;inset:0;background:${C.lime}"></div>
     <div style="position:absolute;left:-300px;bottom:-500px;width:1400px;height:1400px;border-radius:50%;background:#D6FF6B"></div>
     <div style="position:absolute;right:-250px;top:-450px;width:1100px;height:1100px;border-radius:50%;background:#B5EE2C"></div>

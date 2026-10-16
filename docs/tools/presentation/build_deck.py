@@ -141,7 +141,10 @@ for i, (key, label) in enumerate(legend):
     x = 0.8 + i * 1.62
     icon(s, f"stage-{key}", x, 5.75, 0.8)
     add_text(s, x - 0.1, 6.65, 1.2, 0.35, label, size=18, color=STAGE[key], bold=True)
-icon(s, "dumbbell", 10.6, 1.4, 1.9)
+# the tile sits exactly on the centre of the two rings drawn in the title background
+ring = json.loads((ASSETS / "bg" / "title-rings.json").read_text())
+tile = 1.9
+icon(s, "dumbbell", ring["cx"] / ring["width"] * 13.333 - tile / 2, ring["cy"] / ring["height"] * 7.5 - tile / 2, tile)
 notes(s, "Hi, I am Romit and this is IronPass, a gym membership app. I used it to learn how one app travels from my laptop to a monitored Kubernetes cluster on AWS. The seven colours at the bottom are the stages you will see on every slide.")
 
 # 2 ------------------------------------------------------------------ problem and product
