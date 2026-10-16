@@ -53,7 +53,7 @@ export default function Toolbar({
           <span className="sr-only">Search members by name or email</span>
           <input
             type="search"
-            placeholder="Search name or email"
+            placeholder="Search members"
             value={search}
             onChange={(e) => onSearch(e.target.value)}
           />
