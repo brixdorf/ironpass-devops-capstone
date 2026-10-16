@@ -31,7 +31,7 @@ export const api = {
     request(`/members/${id}`, { method: "PUT", body: JSON.stringify(body) }),
   renewMember: (id) => request(`/members/${id}/renew`, { method: "POST" }),
   deleteMember: (id) => request(`/members/${id}`, { method: "DELETE" }),
-  checkins: () => request("/checkins?limit=8"),
+  activity: () => request("/activity?limit=8"),
   checkIn: (memberId) =>
     request("/checkins", { method: "POST", body: JSON.stringify({ member_id: memberId }) }),
 };

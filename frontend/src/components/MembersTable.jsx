@@ -1,8 +1,8 @@
 const STATUS_LABEL = {
-  active: "Active",
-  expired: "Expired",
-  frozen: "Frozen",
-  cancelled: "Cancelled",
+  ACTIVE: "Active",
+  EXPIRED: "Expired",
+  FROZEN: "Frozen",
+  CANCELLED: "Cancelled",
 };
 
 function formatDate(value) {
@@ -38,7 +38,7 @@ export default function MembersTable({ members, loading, onRenew, onFreeze, onDe
               </td>
               <td data-label="Plan">{m.plan_name}</td>
               <td data-label="Status">
-                <span className={`badge badge-${m.effective_status}`}>
+                <span className={`badge badge-${m.effective_status.toLowerCase()}`}>
                   {STATUS_LABEL[m.effective_status]}
                 </span>
               </td>
@@ -50,7 +50,7 @@ export default function MembersTable({ members, loading, onRenew, onFreeze, onDe
                   Renew
                 </button>
                 <button className="link" onClick={() => onFreeze(m)}>
-                  {m.status === "frozen" ? "Unfreeze" : "Freeze"}
+                  {m.status === "FROZEN" ? "Unfreeze" : "Freeze"}
                 </button>
                 <button className="link danger" onClick={() => onDelete(m)}>
                   Delete

@@ -7,9 +7,9 @@ import CheckInPanel from "./components/CheckInPanel.jsx";
 
 const STATUS_FILTERS = [
   { value: "", label: "All" },
-  { value: "active", label: "Active" },
-  { value: "expired", label: "Expired" },
-  { value: "frozen", label: "Frozen" },
+  { value: "ACTIVE", label: "Active" },
+  { value: "EXPIRED", label: "Expired" },
+  { value: "FROZEN", label: "Frozen" },
 ];
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
   const [plans, setPlans] = useState([]);
   const [members, setMembers] = useState([]);
   const [allMembers, setAllMembers] = useState([]);
-  const [recent, setRecent] = useState([]);
+  const [activity, setActivity] = useState([]);
   const [planFilter, setPlanFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
   const [loading, setLoading] = useState(true);
@@ -26,18 +26,18 @@ export default function App() {
 
   const refresh = useCallback(async () => {
     try {
-      const [s, p, list, everyone, r] = await Promise.all([
+      const [s, p, list, everyone, a] = await Promise.all([
         api.stats(),
         api.plans(),
         api.members({ plan_id: planFilter, status: statusFilter }),
         api.members(),
-        api.checkins(),
+        api.activity(),
       ]);
       setStats(s);
       setPlans(p);
       setMembers(list);
       setAllMembers(everyone);
-      setRecent(r);
+      setActivity(a);
       setError("");
     } catch (err) {
       setError("Could not reach the IronPass API. " + err.message);
@@ -123,7 +123,7 @@ export default function App() {
                 attempt(
                   () =>
                     api.updateMember(m.id, {
-                      status: m.status === "frozen" ? "active" : "frozen",
+                      status: m.status === "FROZEN" ? "ACTIVE" : "FROZEN",
                     }),
                   `${m.full_name} updated`
                 )
@@ -139,7 +139,7 @@ export default function App() {
           <aside className="side">
             <CheckInPanel
               members={allMembers}
-              recent={recent}
+              activity={activity}
               onCheckIn={(id) => attempt(() => api.checkIn(id), "Check-in accepted")}
             />
             <SignupForm

@@ -9,7 +9,7 @@ function timeAgo(iso) {
   return `${Math.round(hours / 24)} d ago`;
 }
 
-export default function CheckInPanel({ members, recent, onCheckIn }) {
+export default function CheckInPanel({ members, activity, onCheckIn }) {
   const [memberId, setMemberId] = useState("");
   const [busy, setBusy] = useState(false);
   const selected = memberId || members[0]?.id || "";
@@ -40,15 +40,20 @@ export default function CheckInPanel({ members, recent, onCheckIn }) {
           Check in
         </button>
       </form>
-      <h3>Recent visits</h3>
-      {recent.length === 0 ? (
-        <p className="empty small">No visits yet.</p>
+      <h3>Recent activity</h3>
+      {activity.length === 0 ? (
+        <p className="empty small">Nothing has happened yet.</p>
       ) : (
         <ul className="visits">
-          {recent.map((v) => (
-            <li key={v.id}>
-              <span>{v.member_name}</span>
-              <span className="muted">{timeAgo(v.checked_in_at)}</span>
+          {activity.map((item) => (
+            <li key={`${item.type}-${item.member_id}-${item.at}`}>
+              <span>
+                <span className={`tag tag-${item.type.toLowerCase()}`}>
+                  {item.type === "CHECKIN" ? "Check-in" : "Signup"}
+                </span>
+                {item.message}
+              </span>
+              <span className="muted">{timeAgo(item.at)}</span>
             </li>
           ))}
         </ul>

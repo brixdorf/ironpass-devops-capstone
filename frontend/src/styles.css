@@ -410,3 +410,22 @@ td {
     content: none;
   }
 }
+
+.tag {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.tag-checkin {
+  background: #dff3e6;
+  color: #14502c;
+}
+
+.tag-signup {
+  background: #ffe6da;
+  color: #8a2c05;
+}
