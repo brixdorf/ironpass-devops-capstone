@@ -1,4 +1,6 @@
 <a id="top"></a>
+<p align="center"><img src="docs/assets/logo.svg" width="56" height="56" alt="IronPass logo, a barbell on a lime tile"></p>
+
 <h1 align="center">IronPass</h1>
 
 <p align="center">A gym membership app, taken from code on a laptop to a monitored Kubernetes cluster on AWS.</p>
@@ -81,6 +83,11 @@ Open http://localhost:3000 for the app and http://localhost:8000/docs for the AP
 <p align="center">
   <img src="docs/screenshots/01b-app-mobile-390.png" alt="The same page on a phone, 390 pixels wide: summary cards first, then the member cards" width="260">
   <br><i>The same page on a phone. The table turns into cards.</i>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/29-favicon-sizes.png" alt="The IronPass tab icon at 16 pixels, 32 pixels and the 180 pixel touch icon, side by side" width="420">
+  <br><i>The browser tab icon at 16 and 32 px, and the 180 px home screen icon. All come from one barbell mark.</i>
 </p>
 
 The sections below hold the technical details. Each one is collapsed, click a title to open it.

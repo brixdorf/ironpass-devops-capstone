@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="IronPass logo">
+  <title>IronPass logo</title>
+  <rect width="64" height="64" rx="16" fill="#0B1020"/>
+  <rect x="3" y="3" width="58" height="58" rx="13" fill="#C6FF3D"/>
+  <g transform="translate(32 32) scale(0.86) translate(-32 -32)">
+  <rect x="8" y="16" width="12" height="32" rx="3" fill="#0B1020"/>
+  <rect x="44" y="16" width="12" height="32" rx="3" fill="#0B1020"/>
+  <rect x="20" y="28" width="24" height="8" fill="#0B1020"/></g>
+</svg>
